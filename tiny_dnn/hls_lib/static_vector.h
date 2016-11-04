@@ -13,7 +13,14 @@ class s_vector {
     const int capacity;
   public:
     s_vector():cur(0), capacity(L){};
-    
+
+    s_vector(const s_vector& e) {
+      cur = e.cur;
+      for(int i = 0; i < e.cur; i++) {
+        elems[i] = e[i];
+      }
+    }
+
     void push_back(const T& e) {
       elems[cur++] = e;
     }
@@ -40,10 +47,19 @@ class s_vector {
 
     T & operator[](unsigned int index) {
       return elems[index];  
+    }
+    
+    const T & operator[](unsigned int index) const {
+      return elems[index];
     }    
+
+    s_vector& operator= (const s_vector& o) {
+      cur = o.cur;
+      for(int i = 0; i < cur; i++) {
+        elems[i] = o[i];
+      }
+    }
+            
 };
-
-
-
 
 #endif
