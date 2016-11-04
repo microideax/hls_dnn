@@ -1,3 +1,5 @@
+// Initially designed by Li Wang(wangli1426@gmail.com)
+
 #ifndef __STATIC_VECTOR_H__
 #define __STATIC_VECTOR_H__
 
