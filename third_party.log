@@ -1,0 +1,132 @@
+core_test/script.tcl:add_files ../third_party/CLCudaAPI/clpp11.h
+core_test/script.tcl:add_files ../third_party/CLCudaAPI/cupp11.h
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/activation.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/auxiliary.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/batch_reindex.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/benchmark.cl 
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/bias.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/bnll.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/channel.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/concat.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/contrastive_loss.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/conv_layer_spatial.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/conv_spatial_helper.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/crop.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/dropout.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/eltwise.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/elu.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/embed.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/fft.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/fillbuffer.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/im2col.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/im2col_nd.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/lrn.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/lstm_unit.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/math.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/mergecrop.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/pooling.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/pooling_nd.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/pooling_sk.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/slice.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/softmax_loss.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/solvers.cl
+core_test/script.tcl:#add_files ../../third_party/cl_kernels/tile.cl   
+core_test/script.tcl:add_files ../third_party/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/allocator.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/block_params.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/common.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/compute.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/fixedpoint.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/fixedpoint_neon.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/iterator.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/kernel.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/kernel_SSE.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/kernel_default.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/kernel_neon.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/kernel_reference.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/multi_thread_gemm.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/output.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/output_neon.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/pack.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/pack_SSE.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/pack_neon.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/single_thread_gemm.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/unpack.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/internal/unpack_neon.h 
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/cc_emitter.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/gemm_MxNxK.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/gemv_1xMxK.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/meta.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/meta_arm_32.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/meta_arm_64.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/meta_arm_common.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/mul_1x8_Mx8_neon.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/mul_Nx8_Mx8_neon.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/neon_emitter.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/neon_emitter_64.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/qnt_Nx8_neon.py
+core_test/script.tcl:#add_files ../../third_party/gemmlowp/meta/generators/zip_Nx8_neon.py
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/multi_thread_common.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/multi_thread_gemm.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/multi_thread_gemv.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/operations_common.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/single_thread_gemm.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/single_thread_gemm_arm32.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/meta/single_thread_gemm_arm64.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/profiling/instrumentation.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/profiling/profiler.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/public/bit_depth.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/public/gemmlowp.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/public/map.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/public/output_stages.h
+core_test/script.tcl:add_files ../third_party/gemmlowp/public/reference_gemm.h
+Binary file examples/.script.tcl.swp matches
+examples/script.tcl:add_files -tb ../third_party/CLCudaAPI/clpp11.h
+examples/script.tcl:add_files -tb ../third_party/CLCudaAPI/cupp11.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/eight_bit_int_gemm/eight_bit_int_gemm.cc
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/allocator.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/block_params.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/common.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/compute.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/fixedpoint.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/fixedpoint_neon.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/iterator.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/kernel.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/kernel_SSE.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/kernel_default.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/kernel_neon.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/kernel_reference.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/multi_thread_gemm.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/output.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/output_neon.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/pack.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/pack_SSE.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/pack_neon.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/single_thread_gemm.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/unpack.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/internal/unpack_neon.h 
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/multi_thread_common.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/multi_thread_gemm.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/multi_thread_gemv.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/operations_common.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/single_thread_gemm.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/single_thread_gemm_arm32.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/meta/single_thread_gemm_arm64.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/profiling/instrumentation.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/profiling/profiler.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/public/bit_depth.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/public/gemmlowp.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/public/map.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/public/output_stages.h
+examples/script.tcl:add_files -tb ../third_party/gemmlowp/public/reference_gemm.h
+tiny_dnn/util/util.h:#include "../../third_party/CLCudaAPI/clpp11.h"
+tiny_dnn/util/util.h:#include "../../third_party/CLCudaAPI/cupp11.h"
+tiny_dnn/core/kernels/tiny_quantized_matmul_kernel.h:#include "../../../third_party/gemmlowp/public/gemmlowp.h"
+tiny_dnn/core/framework/device.fwd.h:#include "third_party/CLCudaAPI/clpp11.h"
+tiny_dnn/core/framework/device.fwd.h:#include "third_party/CLCudaAPI/cupp11.h"
+tiny_dnn/core/framework/program_manager.h:#include "../../../third_party/CLCudaAPI/clpp11.h"
+tiny_dnn/core/framework/program_manager.h:#include "../../../third_party/CLCudaAPI/cupp11.h"
+tiny_dnn/core/framework/program.h:#include "../../../third_party/CLCudaAPI/clpp11.h"
+tiny_dnn/core/framework/program.h:#include "../../../third_party/CLCudaAPI/cupp11.h"
