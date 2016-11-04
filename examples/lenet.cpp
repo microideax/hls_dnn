@@ -9,7 +9,7 @@
 #include "stb_image/stb_image_resize.h"
 #include "stb_image/stb_image_write.h"
 //#include "../tiny_dnn/tiny_dnn.h"
-#include "../tiny_dnn/static_vector.h"
+#include "../tiny_dnn/hls_lib/static_vector.h"
 //#include "hls_video.h"
 //#include "hls_opencv.h"
 
