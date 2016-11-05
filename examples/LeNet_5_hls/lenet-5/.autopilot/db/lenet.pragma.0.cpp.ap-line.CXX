@@ -740,6 +740,6 @@
 #pragma line 664 "./stb_image/stb_image_write.h" ::: 50825
 #pragma line 731 "./stb_image/stb_image_write.h" ::: 50884
 #pragma line 11 "lenet.cpp" 2 ::: 51203
-#pragma line 1 "./../tiny_dnn/static_vector.h" 1 ::: 51206
-#pragma line 13 "lenet.cpp" 2 ::: 51249
-#pragma line 159 "lenet.cpp" ::: 51398
+#pragma line 1 "./../tiny_dnn/hls_lib/static_vector.h" 1 ::: 51206
+#pragma line 13 "lenet.cpp" 2 ::: 51270
+#pragma line 159 "lenet.cpp" ::: 51419

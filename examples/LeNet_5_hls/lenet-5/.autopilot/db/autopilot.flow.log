@@ -1,158 +1,159 @@
-@I [HLS-0] Workspace /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5 opened at Fri Nov 04 14:40:12 SGT 2016
-@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.019333Total elapsed time: 0.920 sec.
+@I [HLS-0] Workspace /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5 opened at Sat Nov 05 19:53:38 SGT 2016
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.021013Total elapsed time: 0.970 sec.
 @I [HLS-100] Command "set_part xc7vx690tffg1761-2 "
 @I [HLS-100] Command "add_library xilinx/virtex7/virtex7:xc7vx690t:ffg1761:-2 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3.4e-05Total elapsed time: 0.923 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3.4e-05Total elapsed time: 0.974 sec.
 @I [HLS-100] Command "license_exists VIVADO_HLS "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002546Total elapsed time: 0.934 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002998Total elapsed time: 0.984 sec.
 @I [HLS-100] Command "license_exists ap_opencl "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002427Total elapsed time: 0.944 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002469Total elapsed time: 0.996 sec.
 @I [HLS-100] Command "license_exists AUTOESL_NI "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002267Total elapsed time: 0.953 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002427Total elapsed time: 1.8 sec.
 @I [HLS-100] Command "license_exists HLS "
-@I [HLS-100] Command 'license_exists' returned 0; elapsed 1.1e-05Total elapsed time: 0.953 sec.
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 1e-05Total elapsed time: 1.8 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000371Total elapsed time: 0.955 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000301Total elapsed time: 1.10 sec.
 @I [HLS-100] Command "import_lib /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7 "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.lib "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.lib "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00069Total elapsed time: 0.961 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000839Total elapsed time: 1.16 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000461Total elapsed time: 0.962 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000301Total elapsed time: 1.17 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000382Total elapsed time: 0.963 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000483Total elapsed time: 1.18 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000426Total elapsed time: 0.965 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000495Total elapsed time: 1.20 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000458Total elapsed time: 0.966 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003186Total elapsed time: 0.966 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000326Total elapsed time: 1.21 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003271Total elapsed time: 1.21 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000322Total elapsed time: 0.967 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000356Total elapsed time: 1.22 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000398Total elapsed time: 0.969 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000407Total elapsed time: 1.24 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000282Total elapsed time: 0.971 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006608Total elapsed time: 0.972 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000348Total elapsed time: 1.26 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006606Total elapsed time: 1.27 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_old.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001118Total elapsed time: 0.975 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001218Total elapsed time: 1.30 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_vivado.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001009Total elapsed time: 0.977 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001039Total elapsed time: 1.32 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000414Total elapsed time: 0.982 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000347Total elapsed time: 1.37 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000257Total elapsed time: 0.984 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00036Total elapsed time: 1.39 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00036Total elapsed time: 0.985 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00102Total elapsed time: 0.985 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000344Total elapsed time: 1.40 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00125Total elapsed time: 1.40 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000431Total elapsed time: 0.987 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003159Total elapsed time: 0.987 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000635Total elapsed time: 1.42 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003692Total elapsed time: 1.43 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/dsp48e1.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000272Total elapsed time: 0.988 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000378Total elapsed time: 1.44 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 0.988 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 1.44 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 91050 } {LUT 364200 } {FF 728400 } {DSP48E 1260} {BRAM 1590}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 3.2e-05Total elapsed time: 0.989 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 3.5e-05Total elapsed time: 1.44 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 7e-06Total elapsed time: 0.989 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.01857Total elapsed time: 0.991 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 7e-06Total elapsed time: 1.44 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.019293Total elapsed time: 1.47 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001832Total elapsed time: 0.997 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00182Total elapsed time: 1.53 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00062Total elapsed time: 0.998 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000721Total elapsed time: 1.54 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003068Total elapsed time: 1.2 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003511Total elapsed time: 1.59 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002981Total elapsed time: 1.8 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002357Total elapsed time: 1.63 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009208Total elapsed time: 1.18 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012681Total elapsed time: 1.18 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010643Total elapsed time: 1.74 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013444Total elapsed time: 1.74 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012379Total elapsed time: 1.31 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012145Total elapsed time: 1.88 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006983Total elapsed time: 1.39 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005892Total elapsed time: 1.95 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000876Total elapsed time: 1.63 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002096Total elapsed time: 1.64 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000824Total elapsed time: 1.123 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001907Total elapsed time: 1.123 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001179Total elapsed time: 1.70 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03647Total elapsed time: 1.80 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001056Total elapsed time: 1.129 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.039714Total elapsed time: 1.138 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000378Total elapsed time: 1.81 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000421Total elapsed time: 1.140 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.108928Total elapsed time: 1.191 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.184434Total elapsed time: 1.191 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.065881Total elapsed time: 1.207 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.144668Total elapsed time: 1.207 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00047Total elapsed time: 1.194 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.186937Total elapsed time: 1.194 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.187401Total elapsed time: 1.194 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000402Total elapsed time: 1.209 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.146661Total elapsed time: 1.209 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.147083Total elapsed time: 1.209 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 9e-06Total elapsed time: 1.195 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 1e-05Total elapsed time: 1.210 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 108300} {LUT 433200 } {FF 866400 } {DSP48E 3600} {BRAM 2940}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2.6e-05Total elapsed time: 1.195 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2.9e-05Total elapsed time: 1.210 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 8e-06Total elapsed time: 1.195 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.216546Total elapsed time: 1.195 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 7e-06Total elapsed time: 1.210 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.177545Total elapsed time: 1.210 sec.
 @I [HLS-100] Command "add_library xilinx/virtex7/virtex7_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 8e-06Total elapsed time: 1.196 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 1.211 sec.
 @I [HLS-100] Command "license_exists VIVADO_HLS "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002503Total elapsed time: 1.209 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003098Total elapsed time: 1.222 sec.
 @I [HLS-100] Command "license_exists ap_opencl "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002393Total elapsed time: 1.219 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.00271Total elapsed time: 1.233 sec.
 @I [HLS-100] Command "license_exists AUTOESL_NI "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002321Total elapsed time: 1.228 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.002604Total elapsed time: 1.242 sec.
 @I [HLS-100] Command "license_exists HLS "
-@I [HLS-100] Command 'license_exists' returned 0; elapsed 1e-05Total elapsed time: 1.228 sec.
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 1e-05Total elapsed time: 1.242 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 3.7e-05Total elapsed time: 1.229 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 3.8e-05Total elapsed time: 1.242 sec.
 @I [HLS-100] Command "import_lib /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7_fpv6 "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv7.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00467Total elapsed time: 1.236 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002509Total elapsed time: 1.247 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv.hlp "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000389Total elapsed time: 1.245 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000344Total elapsed time: 1.259 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000287Total elapsed time: 1.246 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000259Total elapsed time: 1.260 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000229Total elapsed time: 1.246 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000859Total elapsed time: 1.246 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 1.260 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000814Total elapsed time: 1.260 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000658Total elapsed time: 1.248 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003454Total elapsed time: 1.248 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004588Total elapsed time: 1.249 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.023671Total elapsed time: 1.256 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000639Total elapsed time: 1.261 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003262Total elapsed time: 1.262 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004386Total elapsed time: 1.262 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.023729Total elapsed time: 1.270 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7_fpv6.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002177Total elapsed time: 1.260 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002671Total elapsed time: 1.260 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.035543Total elapsed time: 1.261 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002528Total elapsed time: 1.274 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002981Total elapsed time: 1.274 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.037413Total elapsed time: 1.275 sec.
 @I [HLS-10] Setting target device to 'xc7vx690tffg1761-2'
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.254142Total elapsed time: 1.261 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.217454Total elapsed time: 1.275 sec.
 @I [HLS-100] Command "create_clock -period 10 -name default "
 @I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.000111Total elapsed time: 1.262 sec.
-@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.001204Total elapsed time: 1.262 sec.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.000164Total elapsed time: 1.277 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.001418Total elapsed time: 1.277 sec.
 @I [HLS-100] Command "csim_design -clean -argv LeNet-weights, 4.bmp "
 @I [HLS-100] Command "source run_sim.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003521Total elapsed time: 2.395 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004393Total elapsed time: 2.463 sec.
 @I [SIM-1] CSim done with 0 errors.
-@I [HLS-100] Command 'csim_design' returned 0; elapsed 0.037203Total elapsed time: 2.395 sec.
+@I [HLS-100] Command 'csim_design' returned 0; elapsed 0.03974Total elapsed time: 2.463 sec.
 @I [HLS-100] Command "csynth_design "
 @I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@W [HLS-40] Cannot find source file ../tiny_dnn/static_vector.h; skipping it.
 @I [HLS-10] Analyzing design file 'lenet.cpp' ... 
 @0 [HLS-0] Analyzing design file 'lenet.cpp' ... 
 @I [HLS-0] Compiling one TU...
@@ -165,7 +166,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 
 @I [HLS-0] GCC PP time: 0 seconds per iteration
 @I [HLS-100] Command "list_core -type functional_unit "
-@I [HLS-100] Command 'list_core' returned 0; elapsed 0.000158Total elapsed time: 2.783 sec.
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0.000205Total elapsed time: 2.989 sec.
 @I [HLS-0] Marker-Pragma convertor: /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp.ap-line.cpp /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp.ap-line.cpp.CXX 1
 @I [HLS-0] 
 Source processor: exec /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/autopilot.sourceprocessor.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lib/classes/jargs.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.0.v20140514-1158.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.0.v20140514-1158.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.0.v20140514-1158.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp.ap-line.cpp"  -m "test_vec_t" -o "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/lenet-5.directive --source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/lenet.cpp --error /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S MulnS" --ve --vetcl /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db --lp --ca --es --gf --df --pd --p2d /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db --sd --scff /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/.systemc_flag
@@ -180,7 +181,7 @@ Error:Syntax error in source:)
  *__first = __tmp;
 @I [HLS-0] Marker-Pragma convertor: /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pp.0.cpp.ap-cdt.cpp /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pragma.0.cpp /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pragma.0.cpp.ap-line.CXX 0
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 5.5e-05Total elapsed time: 5.608 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.9e-05Total elapsed time: 5.627 sec.
 @I [HLS-0] CDT processor time: 2 seconds per iteration
 @I [HLS-0] Pragma handling time: 0 seconds per iteration
 @I [HLS-0] 
@@ -188,11 +189,11 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 
 @I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc -hls -fno-exceptions  -D__llvm__  -w  "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "/nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.g.bc"
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/ve_warning.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000106Total elapsed time: 6.227 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000101Total elapsed time: 6.336 sec.
 @I [HLS-10] Validating synthesis directives ...
 @0 [HLS-0] Validating synthesis directives ...
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.7e-05Total elapsed time: 6.228 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000105Total elapsed time: 6.337 sec.
 @I [HLS-0] Linking all ...
 @I [HLS-0] exec llvm-ld  "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/lenet.bc"  -disable-opt  -L/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/lib -lm_basic -o "/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.o.pre"
 @I [HLS-0] Link time: 2 seconds per iteration
@@ -201,11 +202,11 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-0] Link time: 2 seconds per iteration
 @I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
 @I [HLS-100] Command "cleanup_all_models "
-@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 3.7e-05Total elapsed time: 12.96 sec.
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 3.5e-05Total elapsed time: 12.120 sec.
 @I [HLS-10] Starting code transformations ...
 @0 [HLS-0] Starting code transformations ...
 @I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top test_vec_t  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.g.0.bc -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.g.1.bc -f  -phase std-opt
-@I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:175).
+@I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:181).
 @I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:163).
 @I [HLS-0] Std xform time: 3 seconds per iteration
 @I [HLS-10] Checking synthesizability ...
@@ -227,9 +228,9 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-0] build ssdm: transform -hls -function-uniquify -auto-function-inline  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -interface-preproc -interface-gen  -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -loop-simplify -phi-opt -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.o.2.bc -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
 @I [HLS-0] Build ssdm time: 0 seconds per iteration
 @I [HLS-0] Finish building internal data model.
-@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 5.90076Total elapsed time: 21.587 sec.
-@I [HLS-111] Elapsed time: 7.83915 seconds; current memory usage: 365 MB.
-@I [HLS-100] Command 'elaborate' returned 0; elapsed 6.86725Total elapsed time: 21.596 sec.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 5.85923Total elapsed time: 21.629 sec.
+@I [HLS-111] Elapsed time: 7.80186 seconds; current memory usage: 365 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 6.8175Total elapsed time: 21.637 sec.
 @I [HLS-100] Command "autosyn "
 @I [HLS-10] Starting hardware synthesis ...
 @0 [HLS-0] Starting hardware synthesis ...
@@ -237,27 +238,27 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-10] Synthesizing 'test_vec_t' ...
 @0 [HLS-0] Synthesizing 'test_vec_t' ...
 @I [HLS-100] Command "ap_set_top_model test_vec_t "
-@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0.00018Total elapsed time: 21.596 sec.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0.000193Total elapsed time: 21.638 sec.
 @I [HLS-100] Command "get_model_list test_vec_t -filter all-wo-channel -topdown "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 8.8e-05Total elapsed time: 21.596 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 9.6e-05Total elapsed time: 21.638 sec.
 @I [HLS-100] Command "preproc_iomode -model test_vec_t "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.000313Total elapsed time: 21.597 sec.
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.000324Total elapsed time: 21.639 sec.
 @I [HLS-100] Command "get_model_list test_vec_t -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 1.1e-05Total elapsed time: 21.597 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 1.2e-05Total elapsed time: 21.639 sec.
 @I [HLS-0] Model list for configure: test_vec_t
 @I [HLS-0] Configuring Module : test_vec_t ...
 @I [HLS-100] Command "set_default_model test_vec_t "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 2e-05Total elapsed time: 21.597 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 2.4e-05Total elapsed time: 21.639 sec.
 @I [HLS-100] Command "apply_spec_resource_limit test_vec_t "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 1.8e-05Total elapsed time: 21.597 sec.
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 1.9e-05Total elapsed time: 21.639 sec.
 @I [HLS-0] Model list for preprocess: test_vec_t
 @I [HLS-0] Preprocessing Module: test_vec_t ...
 @I [HLS-100] Command "set_default_model test_vec_t "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 8e-06Total elapsed time: 21.597 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 9e-06Total elapsed time: 21.640 sec.
 @I [HLS-100] Command "cdfg_preprocess -model test_vec_t "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000678Total elapsed time: 21.598 sec.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000804Total elapsed time: 21.640 sec.
 @I [HLS-100] Command "rtl_gen_preprocess test_vec_t "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000744Total elapsed time: 21.599 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000982Total elapsed time: 21.641 sec.
 @I [HLS-0] Model list for synthesis: test_vec_t
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -266,16 +267,16 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model test_vec_t "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 8e-06Total elapsed time: 21.599 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 9e-06Total elapsed time: 21.642 sec.
 @I [HLS-100] Command "schedule -model test_vec_t "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.015711Total elapsed time: 21.615 sec.
-@I [HLS-111] Elapsed time: 0.027977 seconds; current memory usage: 365 MB.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.019284Total elapsed time: 21.661 sec.
+@I [HLS-111] Elapsed time: 0.032112 seconds; current memory usage: 365 MB.
 @I [HLS-100] Command "report -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.00207Total elapsed time: 21.626 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.002514Total elapsed time: 21.672 sec.
 @I [HLS-100] Command "db_write -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.001434Total elapsed time: 21.627 sec.
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.001732Total elapsed time: 21.674 sec.
 @I [HLS-0] Finish scheduling test_vec_t.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -284,7 +285,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model test_vec_t "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.3e-05Total elapsed time: 21.628 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.4e-05Total elapsed time: 21.674 sec.
 @I [HLS-100] Command "bind -model test_vec_t "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
@@ -319,18 +320,18 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.0028Total elapsed time: 21.631 sec.
-@I [HLS-111] Elapsed time: 0.015154 seconds; current memory usage: 365 MB.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.003204Total elapsed time: 21.678 sec.
+@I [HLS-111] Elapsed time: 0.01632 seconds; current memory usage: 365 MB.
 @I [HLS-100] Command "report -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.002305Total elapsed time: 21.641 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.002757Total elapsed time: 21.689 sec.
 @I [HLS-100] Command "db_write -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.000819Total elapsed time: 21.642 sec.
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.00096Total elapsed time: 21.690 sec.
 @I [HLS-0] Finish binding test_vec_t.
 @I [HLS-100] Command "get_model_list test_vec_t -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 1.5e-05Total elapsed time: 21.642 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 1.7e-05Total elapsed time: 21.690 sec.
 @I [HLS-0] Preprocessing for RTLGen ...
 @I [HLS-100] Command "rtl_gen_preprocess test_vec_t "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000563Total elapsed time: 21.643 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000689Total elapsed time: 21.690 sec.
 @I [HLS-0] Model list for RTL generation: test_vec_t
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -342,40 +343,40 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [RTGEN-500] Setting interface mode on port 'test_vec_t/i' to 'ap_none'.
 @I [RTGEN-500] Setting interface mode on function 'test_vec_t' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'test_vec_t'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.004984Total elapsed time: 21.648 sec.
-@I [HLS-111] Elapsed time: 0.017204 seconds; current memory usage: 365 MB.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.005812Total elapsed time: 21.697 sec.
+@I [HLS-111] Elapsed time: 0.019256 seconds; current memory usage: 365 MB.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000148Total elapsed time: 21.657 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000179Total elapsed time: 21.706 sec.
 @I [HLS-100] Command "gen_rtl test_vec_t -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/syn/systemc/test_vec_t -synmodules test_vec_t "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.000651Total elapsed time: 21.657 sec.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.000866Total elapsed time: 21.707 sec.
 @I [HLS-100] Command "gen_rtl test_vec_t -istop -style xilinx -f -lang vhdl -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/syn/vhdl/test_vec_t "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001467Total elapsed time: 21.659 sec.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001777Total elapsed time: 21.709 sec.
 @I [HLS-100] Command "gen_rtl test_vec_t -istop -style xilinx -f -lang vlog -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/syn/verilog/test_vec_t "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.00091Total elapsed time: 21.660 sec.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001091Total elapsed time: 21.710 sec.
 @I [HLS-100] Command "export_constraint_db -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.constraint.tcl -f -tool general "
-@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.000108Total elapsed time: 21.660 sec.
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.000122Total elapsed time: 21.710 sec.
 @I [HLS-100] Command "report -model test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.design.xml -verbose -f -dv "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.00128Total elapsed time: 21.662 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.001535Total elapsed time: 21.712 sec.
 @I [HLS-100] Command "gen_tb_info test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t -p /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000373Total elapsed time: 21.662 sec.
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000434Total elapsed time: 21.712 sec.
 @I [HLS-100] Command "report -model test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/syn/report/test_vec_t_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.001784Total elapsed time: 21.664 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.002089Total elapsed time: 21.715 sec.
 @I [HLS-100] Command "report -model test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/syn/report/test_vec_t_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.000744Total elapsed time: 21.665 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.000862Total elapsed time: 21.715 sec.
 @I [HLS-100] Command "report -model test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.002765Total elapsed time: 21.667 sec.
+@I [HLS-100] Command 'report' returned 0; elapsed 0.00319Total elapsed time: 21.719 sec.
 @I [HLS-100] Command "db_write -model test_vec_t -o /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.00135Total elapsed time: 21.669 sec.
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.001561Total elapsed time: 21.720 sec.
 @I [HLS-100] Command "sc_get_clocks test_vec_t "
-@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 5e-06Total elapsed time: 21.671 sec.
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 6e-06Total elapsed time: 21.723 sec.
 @I [HLS-100] Command "sc_get_portdomain test_vec_t "
-@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 3e-06Total elapsed time: 21.671 sec.
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 3e-06Total elapsed time: 21.723 sec.
 @I [HLS-0] Model list for RTL component generation: test_vec_t
 @I [HLS-0] Handling components in module [test_vec_t] ... 
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.compgen.tcl "
 @I [HLS-0] Found component test_vec_t_abrr_elems.
 @I [HLS-0] Append model test_vec_t_abrr_elems
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000215Total elapsed time: 21.672 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000254Total elapsed time: 21.724 sec.
 @I [HLS-0] Append model test_vec_t
 @I [HLS-0] Generating RTL model list ...
 @I [HLS-0] All models in this session: test_vec_t_abrr_elems test_vec_t
@@ -388,253 +389,253 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/nfs/app/
 @I [HLS-0] CAS Generation done.
 @I [HLS-0] CBC Generation done.
 @I [HLS-100] Command "export_ssdm /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/a.export.ll "
-@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.000109Total elapsed time: 21.673 sec.
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.000139Total elapsed time: 21.725 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000141Total elapsed time: 21.675 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000174Total elapsed time: 21.727 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001055Total elapsed time: 21.679 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00203Total elapsed time: 21.679 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000805Total elapsed time: 21.731 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001515Total elapsed time: 21.731 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000507Total elapsed time: 21.681 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000412Total elapsed time: 21.732 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000872Total elapsed time: 21.682 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000722Total elapsed time: 21.734 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000314Total elapsed time: 21.683 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000151Total elapsed time: 21.735 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000308Total elapsed time: 21.684 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000119Total elapsed time: 21.735 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002023Total elapsed time: 21.687 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001194Total elapsed time: 21.737 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000564Total elapsed time: 21.688 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000483Total elapsed time: 21.738 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003829Total elapsed time: 21.692 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002299Total elapsed time: 21.740 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00491Total elapsed time: 21.697 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002431Total elapsed time: 21.743 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005429Total elapsed time: 21.702 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010676Total elapsed time: 21.702 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004601Total elapsed time: 21.747 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007317Total elapsed time: 21.747 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01179Total elapsed time: 21.714 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012271Total elapsed time: 21.760 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006381Total elapsed time: 21.721 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012178Total elapsed time: 21.772 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.021743Total elapsed time: 21.743 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016502Total elapsed time: 21.789 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000342Total elapsed time: 21.744 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000254Total elapsed time: 21.789 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.074776Total elapsed time: 21.818 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.133243Total elapsed time: 21.818 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.061981Total elapsed time: 21.852 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.115423Total elapsed time: 21.852 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000289Total elapsed time: 21.820 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.135338Total elapsed time: 21.820 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.135589Total elapsed time: 21.820 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000263Total elapsed time: 21.853 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.116998Total elapsed time: 21.853 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.117276Total elapsed time: 21.853 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/virtex7/virtex7_fpv6.gen "
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002717Total elapsed time: 21.823 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00302Total elapsed time: 21.823 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001255Total elapsed time: 21.854 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0015Total elapsed time: 21.854 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0003Total elapsed time: 21.824 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00013Total elapsed time: 21.855 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000284Total elapsed time: 21.825 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00012Total elapsed time: 21.855 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00028Total elapsed time: 21.826 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000122Total elapsed time: 21.856 sec.
 @I [HLS-100] Command "source /home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/LeNet_5_hls/lenet-5/.autopilot/db/test_vec_t.compgen.tcl "
 @I [RTMG-278] Implementing memory 'test_vec_t_abrr_elems_ram' using distributed RAMs with power-on initialization.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019325Total elapsed time: 21.845 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.014938Total elapsed time: 21.871 sec.
 @I [HLS-10] Finished generating all RTL models.
 @0 [HLS-0] Finished generating all RTL models.
 @I [WSYSC-301] Generating RTL SystemC for 'test_vec_t'.
 @I [WVHDL-304] Generating RTL VHDL for 'test_vec_t'.
 @I [WVLOG-307] Generating RTL Verilog for 'test_vec_t'.
-@I [HLS-100] Command 'autosyn' returned 0; elapsed 0.248541Total elapsed time: 21.849 sec.
-@I [HLS-100] Command 'csynth_design' returned 0; elapsed 7.11601Total elapsed time: 21.849 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.70714Total elapsed time: 21.849 sec.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 0.231612Total elapsed time: 21.874 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 7.04934Total elapsed time: 21.874 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.65545Total elapsed time: 21.874 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/tcl/eltcl/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00038Total elapsed time: 21.855 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000428Total elapsed time: 21.879 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/control/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000261Total elapsed time: 21.857 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000229Total elapsed time: 21.881 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/http/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000279Total elapsed time: 21.857 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000288Total elapsed time: 21.881 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/profiler/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000281Total elapsed time: 21.858 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000196Total elapsed time: 21.881 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/irc/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000274Total elapsed time: 21.858 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000322Total elapsed time: 21.882 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/rc4/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000267Total elapsed time: 21.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000213Total elapsed time: 21.882 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/des/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000269Total elapsed time: 21.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000293Total elapsed time: 21.882 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/jpeg/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000283Total elapsed time: 21.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000201Total elapsed time: 21.883 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/uuid/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000252Total elapsed time: 21.860 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000252Total elapsed time: 21.883 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ftpd/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000179Total elapsed time: 21.860 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 21.883 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/grammar_me/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000236Total elapsed time: 21.860 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00032Total elapsed time: 21.884 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ntp/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000152Total elapsed time: 21.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000183Total elapsed time: 21.884 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/md5crypt/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000176Total elapsed time: 21.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000252Total elapsed time: 21.884 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/yaml/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000176Total elapsed time: 21.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 21.885 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/base64/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 21.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000275Total elapsed time: 21.885 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/tar/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 21.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000202Total elapsed time: 21.885 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/multiplexer/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000196Total elapsed time: 21.862 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000259Total elapsed time: 21.886 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/exif/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000266Total elapsed time: 21.862 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 21.886 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/javascript/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 21.862 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000236Total elapsed time: 21.886 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/csv/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00021Total elapsed time: 21.863 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000191Total elapsed time: 21.887 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/crc/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00023Total elapsed time: 21.863 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 21.887 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/map/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000225Total elapsed time: 21.863 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000221Total elapsed time: 21.887 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/json/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000256Total elapsed time: 21.864 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000171Total elapsed time: 21.887 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/grammar_peg/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000158Total elapsed time: 21.864 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000187Total elapsed time: 21.888 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/amazon-s3/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00031Total elapsed time: 21.864 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000165Total elapsed time: 21.888 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000459Total elapsed time: 21.865 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000223Total elapsed time: 21.888 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/interp/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000264Total elapsed time: 21.865 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000196Total elapsed time: 21.888 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/mapproj/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000175Total elapsed time: 21.865 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000161Total elapsed time: 21.889 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/png/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 21.866 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000184Total elapsed time: 21.889 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/pop3d/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000314Total elapsed time: 21.866 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000221Total elapsed time: 21.889 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/counter/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000331Total elapsed time: 21.867 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 21.889 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/nmea/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000237Total elapsed time: 21.867 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000176Total elapsed time: 21.890 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000273Total elapsed time: 21.867 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000145Total elapsed time: 21.890 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/mime/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000277Total elapsed time: 21.868 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000136Total elapsed time: 21.890 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/comm/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00024Total elapsed time: 21.868 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000194Total elapsed time: 21.890 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ident/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000201Total elapsed time: 21.868 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000194Total elapsed time: 21.891 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/uri/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000174Total elapsed time: 21.868 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000201Total elapsed time: 21.891 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/transfer/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000286Total elapsed time: 21.869 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000248Total elapsed time: 21.891 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ftp/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000181Total elapsed time: 21.869 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00023Total elapsed time: 21.891 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/fileutil/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000249Total elapsed time: 21.869 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 21.892 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/inifile/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000191Total elapsed time: 21.870 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000212Total elapsed time: 21.892 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/bibtex/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000199Total elapsed time: 21.870 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000167Total elapsed time: 21.892 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/blowfish/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000209Total elapsed time: 21.870 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000172Total elapsed time: 21.893 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/rcs/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000277Total elapsed time: 21.870 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000151Total elapsed time: 21.893 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cache/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 21.871 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000208Total elapsed time: 21.893 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/htmlparse/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000258Total elapsed time: 21.871 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000208Total elapsed time: 21.893 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/simulation/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000185Total elapsed time: 21.871 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000216Total elapsed time: 21.894 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/base32/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000277Total elapsed time: 21.872 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000203Total elapsed time: 21.894 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/nntp/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000203Total elapsed time: 21.872 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000203Total elapsed time: 21.894 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/page/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000676Total elapsed time: 21.873 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000536Total elapsed time: 21.895 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000295Total elapsed time: 21.873 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000277Total elapsed time: 21.895 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/otp/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000228Total elapsed time: 21.873 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 21.895 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/html/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000187Total elapsed time: 21.874 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 21.895 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/grammar_fa/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000217Total elapsed time: 21.874 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000212Total elapsed time: 21.896 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/wip/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00026Total elapsed time: 21.874 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000167Total elapsed time: 21.896 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/snit/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000307Total elapsed time: 21.875 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000228Total elapsed time: 21.896 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/docstrip/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000166Total elapsed time: 21.875 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00017Total elapsed time: 21.896 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/sha1/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000295Total elapsed time: 21.875 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000206Total elapsed time: 21.897 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/log/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000251Total elapsed time: 21.875 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000163Total elapsed time: 21.897 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/doctools/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000324Total elapsed time: 21.876 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000266Total elapsed time: 21.897 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/treeql/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00022Total elapsed time: 21.876 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 21.897 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/pop3/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000218Total elapsed time: 21.876 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000193Total elapsed time: 21.898 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/stooop/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000184Total elapsed time: 21.877 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000233Total elapsed time: 21.898 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/md4/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000205Total elapsed time: 21.877 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 21.898 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/nns/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 21.877 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 21.898 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/fumagic/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000232Total elapsed time: 21.877 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000212Total elapsed time: 21.899 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/uev/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000179Total elapsed time: 21.878 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000154Total elapsed time: 21.899 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/md5/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000206Total elapsed time: 21.878 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 21.899 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/aes/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000216Total elapsed time: 21.878 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000183Total elapsed time: 21.899 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/sasl/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00031Total elapsed time: 21.879 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000205Total elapsed time: 21.900 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/textutil/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00022Total elapsed time: 21.879 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000297Total elapsed time: 21.900 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/units/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 21.879 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000207Total elapsed time: 21.900 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/pluginmgr/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000217Total elapsed time: 21.879 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 21.901 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/bench/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000302Total elapsed time: 21.880 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 21.901 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ncgi/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000165Total elapsed time: 21.880 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 21.901 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/dns/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000228Total elapsed time: 21.880 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000216Total elapsed time: 21.901 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/term/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 21.881 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000281Total elapsed time: 21.902 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/tiff/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000178Total elapsed time: 21.881 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000218Total elapsed time: 21.902 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/report/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000204Total elapsed time: 21.881 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000193Total elapsed time: 21.902 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/tie/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000245Total elapsed time: 21.881 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000241Total elapsed time: 21.902 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/soundex/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000158Total elapsed time: 21.882 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000163Total elapsed time: 21.903 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/smtpd/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 21.882 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 21.903 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/stringprep/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000336Total elapsed time: 21.882 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000174Total elapsed time: 21.903 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/asn/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000259Total elapsed time: 21.883 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000176Total elapsed time: 21.903 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/bee/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000221Total elapsed time: 21.883 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000159Total elapsed time: 21.904 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ldap/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00025Total elapsed time: 21.883 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 21.904 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/ripemd/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000257Total elapsed time: 21.884 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000178Total elapsed time: 21.904 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000268Total elapsed time: 21.884 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000316Total elapsed time: 21.904 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcl8.5/opt0.4/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000215Total elapsed time: 21.885 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000288Total elapsed time: 21.906 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcl8.5/http1.0/pkgIndex.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000215Total elapsed time: 21.886 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000191Total elapsed time: 21.906 sec.
 @I [HLS-100] Command "source /nfs/app/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcl8.5/history.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000624Total elapsed time: 25.510 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000738Total elapsed time: 30.260 sec.
 @I [HLS-100] Command "cleanup_all "
-@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.003874Total elapsed time: 25.548 sec.
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.003911Total elapsed time: 30.307 sec.

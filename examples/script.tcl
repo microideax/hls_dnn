@@ -2,7 +2,7 @@
 ## Please DO NOT edit it.
 ## Copyright (C) 2015 Xilinx Inc. All rights reserved.
 ############################################################
-open_project LeNet_5_hls
+open_project hls_proj
 
 #set_top recognize
 #set_top convert_image

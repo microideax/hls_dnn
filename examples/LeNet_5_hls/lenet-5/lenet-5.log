@@ -8,17 +8,18 @@ Copyright (C) 2014 Xilinx Inc. All rights reserved.
 @I [HLS-10] Setting target device to 'xc7vx690tffg1761-2'
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [SIM-1] CSim done with 0 errors.
+@W [HLS-40] Cannot find source file ../tiny_dnn/static_vector.h; skipping it.
 @I [HLS-10] Analyzing design file 'lenet.cpp' ... 
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
-@I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:175).
+@I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:181).
 @I [XFORM-603] Inlining function 's_vector<int, 16>::operator[]' into 'test_vec_t' (lenet.cpp:163).
 @I [HLS-10] Checking synthesizability ...
 @I [XFORM-602] Inlining function 's_vector<int, 16>::push_back' into 'test_vec_t' (lenet.cpp:172) automatically.
 @I [XFORM-102] Automatically partitioning small array 'arr' completely based on array size.
 @I [XFORM-101] Partitioning array 'arr' in dimension 1 completely.
 @I [XFORM-602] Inlining function 's_vector<int, 16>::push_back' into 'test_vec_t' (lenet.cpp:172) automatically.
-@I [HLS-111] Elapsed time: 7.83915 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 7.80186 seconds; current memory usage: 365 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'test_vec_t' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -26,7 +27,7 @@ Copyright (C) 2014 Xilinx Inc. All rights reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.027977 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 0.032112 seconds; current memory usage: 365 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'test_vec_t' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -35,18 +36,18 @@ Copyright (C) 2014 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.015154 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 0.01632 seconds; current memory usage: 365 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'test_vec_t' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-500] Setting interface mode on port 'test_vec_t/i' to 'ap_none'.
 @I [RTGEN-500] Setting interface mode on function 'test_vec_t' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'test_vec_t'.
-@I [HLS-111] Elapsed time: 0.017204 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 0.019256 seconds; current memory usage: 365 MB.
 @I [RTMG-278] Implementing memory 'test_vec_t_abrr_elems_ram' using distributed RAMs with power-on initialization.
 @I [HLS-10] Finished generating all RTL models.
 @I [WSYSC-301] Generating RTL SystemC for 'test_vec_t'.
 @I [WVHDL-304] Generating RTL VHDL for 'test_vec_t'.
 @I [WVLOG-307] Generating RTL Verilog for 'test_vec_t'.
-@I [HLS-112] Total elapsed time: 25.563 seconds; peak memory usage: 365 MB.
+@I [HLS-112] Total elapsed time: 30.322 seconds; peak memory usage: 365 MB.
 @I [LIC-101] Checked in feature [HLS]

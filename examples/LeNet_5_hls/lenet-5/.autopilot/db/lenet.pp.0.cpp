@@ -51192,7 +51192,9 @@ extern int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, i
 # 11 "lenet.cpp" 2
 //#include "../tiny_dnn/tiny_dnn.h"
 
-# 1 "./../tiny_dnn/static_vector.h" 1
+# 1 "./../tiny_dnn/hls_lib/static_vector.h" 1
+// Initially designed by Li Wang(wangli1426@gmail.com)
+
 
 
 
@@ -51206,6 +51208,13 @@ class s_vector {
     const int capacity;
   public:
     s_vector():cur(0), capacity(L){};
+
+    s_vector(const s_vector& e) {
+      cur = e.cur;
+      for(int i = 0; i < e.cur; i++) {
+        elems[i] = e[i];
+      }
+    }
 
     void push_back(const T& e) {
       elems[cur++] = e;
@@ -51234,6 +51243,18 @@ class s_vector {
     T & operator[](unsigned int index) {
       return elems[index];
     }
+
+    const T & operator[](unsigned int index) const {
+      return elems[index];
+    }
+
+    s_vector& operator= (const s_vector& o) {
+      cur = o.cur;
+      for(int i = 0; i < cur; i++) {
+        elems[i] = o[i];
+      }
+    }
+
 };
 # 13 "lenet.cpp" 2
 //#include "hls_video.h"
@@ -51397,8 +51418,16 @@ int test_vec_t(int i) {
 */
     abrr.push_back(i);
 
+
+    //for(int x: abrr) {
+    //  cout << x;
+    //}
+
+
     //return abrr.size(); 
     return abrr[3] + i;
+
+
 }
 
 
