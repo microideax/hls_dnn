@@ -1,2 +1,0 @@
-test_vec_t_abrr_elems
-test_vec_t

@@ -8,8 +8,8 @@ open_project hls_proj
 #set_top convert_image
 #set_top predict
 #set_top construct_net
-#set_top test_hls
-set_top test_vec_t
+set_top test_hls
+#set_top test_vec_t
 
 add_files stb_image/stb_image.h
 add_files stb_image/stb_image_resize.h
@@ -121,7 +121,7 @@ add_files ../tiny_dnn/util/target_cost.h
 add_files ../tiny_dnn/util/util.h
 add_files ../tiny_dnn/util/weight_init.h
 
-add_files ../tiny_dnn/static_vector.h
+add_files ../tiny_dnn/hls_lib/static_vector.h
 
 add_files ../tiny_dnn/config.h
 add_files ../tiny_dnn/network.h
