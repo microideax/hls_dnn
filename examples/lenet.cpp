@@ -2,12 +2,12 @@
 //eliminating OpenCV lib dependency
 #include <iostream>
 #include <vector>
-#define STB_IMAGE_IMPLEMENTATION
-#define STB_IMAGE_RESIZE_IMPLEMENTATION
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image/stb_image.h"
-#include "stb_image/stb_image_resize.h"
-#include "stb_image/stb_image_write.h"
+//#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_RESIZE_IMPLEMENTATION
+//#define STB_IMAGE_WRITE_IMPLEMENTATION
+//#include "stb_image/stb_image.h"
+//#include "stb_image/stb_image_resize.h"
+//#include "stb_image/stb_image_write.h"
 //#include "../tiny_dnn/tiny_dnn.h"
 #include "../tiny_dnn/hls_lib/static_vector.h"
 //#include "hls_video.h"
@@ -17,13 +17,14 @@
 //using namespace tiny_dnn::activation;
 using namespace std;
 
+/*
 // rescale output to 0-100
 template <typename Activation>
 double rescale(double x) {
     Activation a;
     return 100.0 * (x - a.scale().first) / (a.scale().second - a.scale().first);
 }
-
+*/
 /*
 void convert_image(const std::string& imagefilename,
     double minv,

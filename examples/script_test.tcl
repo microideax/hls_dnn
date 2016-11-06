@@ -8,8 +8,8 @@ open_project hls_proj
 #set_top convert_image
 #set_top predict
 #set_top construct_net
-set_top test_hls
-#set_top test_vec_t
+#set_top test_hls
+set_top test_vec_t
 
 add_files stb_image/stb_image.h
 add_files stb_image/stb_image_resize.h
@@ -105,7 +105,6 @@ add_files ../tiny_dnn/layers/quantized_deconvolutional_layer.h
 add_files ../tiny_dnn/layers/quantized_fully_connected_layer.h
 add_files ../tiny_dnn/layers/slice_layer.h
 add_files ../tiny_dnn/lossfunctions/loss_function.h
-#add_files ../tiny_dnn/models/alexnet.h
 add_files ../tiny_dnn/optimizers/optimizer.h
 add_files ../tiny_dnn/util/aligned_allocator.h
 add_files ../tiny_dnn/util/colored_print.h
@@ -128,7 +127,8 @@ add_files ../tiny_dnn/network.h
 add_files ../tiny_dnn/node.h
 add_files ../tiny_dnn/nodes.h
 add_files ../tiny_dnn/tiny_dnn.h
-add_files -tb lenet.cpp
+
+add_files lenet.cpp
 
 add_files -cflags "-std=c++0x -pthread -pedantic -Wall -Wextra" -tb lenet.cpp
 add_files -tb 4.bmp
