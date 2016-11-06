@@ -84,7 +84,8 @@ inline bool is_little_endian() {
 
 template<typename T>
 size_t max_index(const T& vec) {
-    auto begin_iterator = std::begin(vec);
+    //auto begin_iterator = std::begin(vec);
+    const_iterator<T> begin_iterator = std::begin(vec);
     return std::max_element(begin_iterator, std::end(vec)) - begin_iterator;
 }
 

@@ -2,19 +2,21 @@
 //eliminating OpenCV lib dependency
 #include <iostream>
 #include <vector>
-//#define STB_IMAGE_IMPLEMENTATION
-//#define STB_IMAGE_RESIZE_IMPLEMENTATION
-//#define STB_IMAGE_WRITE_IMPLEMENTATION
-//#include "stb_image/stb_image.h"
-//#include "stb_image/stb_image_resize.h"
-//#include "stb_image/stb_image_write.h"
-//#include "../tiny_dnn/tiny_dnn.h"
+#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_RESIZE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image/stb_image.h"
+#include "stb_image/stb_image_resize.h"
+#include "stb_image/stb_image_write.h"
+#include "../tiny_dnn/tiny_dnn.h"
 #include "../tiny_dnn/hls_lib/static_vector.h"
 //#include "hls_video.h"
 //#include "hls_opencv.h"
 
-//using namespace tiny_dnn;
-//using namespace tiny_dnn::activation;
+#include "../tiny_dnn/util/util.h"
+
+using namespace tiny_dnn;
+using namespace tiny_dnn::activation;
 using namespace std;
 
 /*
