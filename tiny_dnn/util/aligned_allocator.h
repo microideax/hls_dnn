@@ -65,7 +65,8 @@ public:
         return std::addressof(value);
     }
 
-    pointer allocate(size_type size, const void* = nullptr) {
+    // pointer allocate(size_type size, const void* = nullptr) {
+    pointer allocate(size_type size, const void* = 0) {
         void* p = aligned_alloc(alignment, sizeof(T) * size);
         if (!p && size > 0)
             throw nn_error("failed to allocate");
