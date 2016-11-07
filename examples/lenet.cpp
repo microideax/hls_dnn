@@ -190,7 +190,7 @@ int main(int argc, char** argv) {
 
     //construct net and load weights to net
     construct_net(nn);
-
+/*
     nn_load_weight("LeNet-weights", nn);
 
     //prediction stage    
@@ -198,7 +198,7 @@ int main(int argc, char** argv) {
 
     //print out ranked scores 
     print_score(res);
- 
+*/ 
     int a[10], b[10];
     cout<<"testing_hls..."<< f << endl;
     test_hls(a,b);

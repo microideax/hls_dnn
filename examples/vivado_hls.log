@@ -6,7 +6,7 @@
 ================================================================
 @I [LIC-101] Checked out feature [HLS]
 @I [HLS-10] Running '/nfs/app/Xilinx/Vivado_HLS/2014.4/bin/unwrapped/lnx64.o/vivado_hls'
-            for user 'yaochen' on host 'yao-ADSC' (Linux_x86_64 version 4.4.0-45-generic) on Mon Nov 07 14:01:47 SGT 2016
+            for user 'yaochen' on host 'yao-ADSC' (Linux_x86_64 version 4.4.0-45-generic) on Mon Nov 07 15:14:29 SGT 2016
             in directory '/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples'
 @I [HLS-10] Opening project '/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/hls_proj'.
 @I [HLS-10] Adding design file 'stb_image/stb_image.h' to the project
@@ -163,14 +163,17 @@ In file included from ../../../../../tiny_dnn/nodes.h:32:0,
                  from ../../../../../tiny_dnn/network.h:37,
                  from ../../../../../tiny_dnn/tiny_dnn.h:30,
                  from ../../../../lenet.cpp:11:
-../../../../../tiny_dnn/util/util.h:345:13: warning: unused parameter ‘platform_id’ [-Wunused-parameter]
-../../../../../tiny_dnn/util/util.h:345:13: warning: unused parameter ‘device_id’ [-Wunused-parameter]
+../../../../../tiny_dnn/util/util.h: In function ‘void tiny_dnn::fill_tensor(tiny_dnn::tensor_t&, tiny_dnn::float_t)’:
+../../../../../tiny_dnn/util/util.h:337:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../../../../../tiny_dnn/util/util.h: In function ‘void tiny_dnn::fill_tensor(tiny_dnn::tensor_t&, tiny_dnn::float_t, tiny_dnn::cnn_size_t)’:
+../../../../../tiny_dnn/util/util.h:346:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
 In file included from ../../../../../tiny_dnn/layers/../node.h:40:0,
                  from ../../../../../tiny_dnn/layers/layer.h:38,
                  from ../../../../../tiny_dnn/nodes.h:33,
                  from ../../../../../tiny_dnn/network.h:37,
                  from ../../../../../tiny_dnn/tiny_dnn.h:30,
                  from ../../../../lenet.cpp:11:
+../../../../../tiny_dnn/layers/../util/weight_init.h: At global scope:
 ../../../../../tiny_dnn/layers/../util/weight_init.h:35:18: warning: unused parameter ‘weight’ [-Wunused-parameter]
 ../../../../../tiny_dnn/layers/../util/weight_init.h:35:18: warning: unused parameter ‘fan_in’ [-Wunused-parameter]
 ../../../../../tiny_dnn/layers/../util/weight_init.h:35:18: warning: unused parameter ‘fan_out’ [-Wunused-parameter]
@@ -386,12 +389,12 @@ In file included from ../../../../../tiny_dnn/nodes.h:32:0,
                  from ../../../../lenet.cpp:11:
 ../../../../../tiny_dnn/util/util.h: In function ‘std::vector<_RealType> tiny_dnn::map_(const std::vector<T>&, Pred) [with Result = std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >, T = std::shared_ptr<tiny_dnn::edge>, Pred = tiny_dnn::layer::backward(const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > > >&)::<lambda(tiny_dnn::edgeptr_t)>]’:
 ../../../../../tiny_dnn/layers/layer.h:431:10:   instantiated from here
-../../../../../tiny_dnn/util/util.h:260:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../../../../../tiny_dnn/util/util.h:266:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
 ../../../../../tiny_dnn/util/util.h: In member function ‘T tiny_dnn::index3d<T>::get_index(T, T, T) const [with T = long unsigned int]’:
 ../../../../../tiny_dnn/layers/../core/kernels/conv2d.h:86:74:   instantiated from here
-../../../../../tiny_dnn/util/util.h:159:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
-../../../../../tiny_dnn/util/util.h:160:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
-../../../../../tiny_dnn/util/util.h:161:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+../../../../../tiny_dnn/util/util.h:162:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+../../../../../tiny_dnn/util/util.h:163:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+../../../../../tiny_dnn/util/util.h:164:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
 In file included from ../../../../../tiny_dnn/tiny_dnn.h:38:0,
                  from ../../../../lenet.cpp:11:
 ../../../../../tiny_dnn/layers/convolutional_layer.h: At global scope:
@@ -411,47 +414,6 @@ testing_hls...32
 @I [SIM-1] CSim done with 0 errors.
 @I [HLS-10] Analyzing design file 'lenet.cpp' ... 
 @E [HLS-70] Compilation errors found:
-In file included from lenet.cpp:11:
-In file included from ./../tiny_dnn/tiny_dnn.h:30:
-In file included from ./../tiny_dnn/network.h:37:
-In file included from ./../tiny_dnn/nodes.h:32:
-In file included from ./../tiny_dnn/util/util.h:31:
-In file included from /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/type_traits:34:
-/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/c++0x_warning.h:32:2: error: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x. This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.
-#error This file requires compiler and library support for the upcoming \
- ^
-In file included from lenet.cpp:11:
-In file included from ./../tiny_dnn/tiny_dnn.h:30:
-In file included from ./../tiny_dnn/network.h:37:
-In file included from ./../tiny_dnn/nodes.h:32:
-In file included from ./../tiny_dnn/util/util.h:39:
-In file included from ./../tiny_dnn/util/aligned_allocator.h:35:
-In file included from ./../tiny_dnn/util/nn_error.h:30:
-./../tiny_dnn/util/colored_print.h:39:6: error: expected identifier or '{'
-enum class Color {
-     ^
-./../tiny_dnn/util/colored_print.h:39:1: warning: declaration does not declare anything [-Wmissing-declarations]
-enum class Color {
-^~~~
-./../tiny_dnn/util/colored_print.h:57:1: error: 'inline' can only appear on functions
-inline const char* getColorEscape(Color c) {
-^
-./../tiny_dnn/util/colored_print.h:57:35: error: use of undeclared identifier 'Color'
-inline const char* getColorEscape(Color c) {
-                                  ^
-./../tiny_dnn/util/colored_print.h:57:43: error: expected ';' after top level declarator
-inline const char* getColorEscape(Color c) {
-                                          ^
-                                          ;
-In file included from lenet.cpp:11:
-In file included from ./../tiny_dnn/tiny_dnn.h:30:
-In file included from ./../tiny_dnn/network.h:37:
-In file included from ./../tiny_dnn/nodes.h:32:
-In file included from ./../tiny_dnn/util/util.h:39:
-In file included from ./../tiny_dnn/util/aligned_allocator.h:35:
-./../tiny_dnn/util/nn_error.h:57:22: error: use of undeclared identifier 'Color'
-        coloredPrint(Color::YELLOW, msg_h_ + msg_);
-                     ^
 In file included from lenet.cpp:11:
 In file included from ./../tiny_dnn/tiny_dnn.h:30:
 In file included from ./../tiny_dnn/network.h:37:
@@ -479,6 +441,16 @@ In file included from ./../tiny_dnn/util/util.h:39:
 /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/move.h:43:5: note: '__addressof' declared here
     __addressof(_Tp& __r)
     ^
+In file included from lenet.cpp:11:
+In file included from ./../tiny_dnn/tiny_dnn.h:30:
+In file included from ./../tiny_dnn/network.h:37:
+In file included from ./../tiny_dnn/nodes.h:32:
+In file included from ./../tiny_dnn/util/util.h:41:
+In file included from ./../tiny_dnn/util/parallel_for.h:29:
+In file included from /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/type_traits:34:
+/nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/c++0x_warning.h:32:2: error: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x. This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.
+#error This file requires compiler and library support for the upcoming \
+ ^
 In file included from lenet.cpp:11:
 In file included from ./../tiny_dnn/tiny_dnn.h:30:
 In file included from ./../tiny_dnn/network.h:37:
@@ -523,8 +495,22 @@ In file included from ./../tiny_dnn/util/util.h:41:
 ./../tiny_dnn/util/parallel_for.h:145:1: error: 'inline' can only appear on functions
 inline
 ^
+./../tiny_dnn/util/parallel_for.h:146:6: error: variable 'for_' declared as a template
+void for_(std::true_type, bool parallelize, int begin, T end, Func f, int grainsize = 100){
+     ^
+./../tiny_dnn/util/parallel_for.h:146:16: error: no member named 'true_type' in namespace 'std'; did you mean '__true_type'?
+void for_(std::true_type, bool parallelize, int begin, T end, Func f, int grainsize = 100){
+          ~~~~~^
+./../tiny_dnn/util/parallel_for.h:146:91: error: expected ';' at end of declaration
+void for_(std::true_type, bool parallelize, int begin, T end, Func f, int grainsize = 100){
+                                                                                          ^
+                                                                                          ;
+./../tiny_dnn/util/parallel_for.h:146:91: error: expected unqualified-id
+./../tiny_dnn/util/parallel_for.h:153:1: error: 'inline' can only appear on functions
+inline
+^
 fatal error: too many errors emitted, stopping now [-ferror-limit=]
-4 warnings and 20 errors generated.
+3 warnings and 20 errors generated.
 Failed checking during preprocessing.
     while executing
 "source [lindex $::argv 1] "

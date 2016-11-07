@@ -54,7 +54,7 @@ class nn_warn {
 public:
     explicit nn_warn(const std::string& msg) : msg_(msg) {
 #ifdef CNN_USE_STDOUT
-        coloredPrint(Color::YELLOW, msg_h_ + msg_);
+        coloredPrint(YELLOW, msg_h_ + msg_);
 #endif
     }
 

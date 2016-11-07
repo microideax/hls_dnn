@@ -36,7 +36,8 @@
 
 namespace tiny_dnn {
 
-enum class Color {
+// enum class Color {
+enum Color {
     RED,
     GREEN,
     BLUE,
@@ -46,20 +47,20 @@ enum class Color {
 #ifdef CNN_WINDOWS
 inline WORD getColorAttr(Color c) {
     switch (c) {
-    case Color::RED:    return FOREGROUND_RED;
-    case Color::GREEN:  return FOREGROUND_GREEN;
-    case Color::BLUE:   return FOREGROUND_BLUE;
-    case Color::YELLOW: return FOREGROUND_GREEN|FOREGROUND_RED;
+    case RED:    return FOREGROUND_RED;
+    case GREEN:  return FOREGROUND_GREEN;
+    case BLUE:   return FOREGROUND_BLUE;
+    case YELLOW: return FOREGROUND_GREEN|FOREGROUND_RED;
     default:            assert(0); return 0;
     }
 }
 #else
 inline const char* getColorEscape(Color c) {
     switch (c) {
-    case Color::RED:    return "\033[31m";
-    case Color::GREEN:  return "\033[32m";
-    case Color::BLUE:   return "\033[34m";
-    case Color::YELLOW: return "\033[33m";
+    case RED:    return "\033[31m";
+    case GREEN:  return "\033[32m";
+    case BLUE:   return "\033[34m";
+    case YELLOW: return "\033[33m";
     default:           assert(0); return "";
     }
 }
