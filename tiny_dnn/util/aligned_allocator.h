@@ -56,7 +56,7 @@ public:
 
     template <typename U>
     aligned_allocator(const aligned_allocator<U, alignment>&) {}
-
+/*
     const_pointer address(const_reference value) const {
         return std::addressof(value);
     }
@@ -64,7 +64,7 @@ public:
     pointer address(reference value) const {
         return std::addressof(value);
     }
-
+*/
     // pointer allocate(size_type size, const void* = nullptr) {
     pointer allocate(size_type size, const void* = 0) {
         void* p = aligned_alloc(alignment, sizeof(T) * size);
