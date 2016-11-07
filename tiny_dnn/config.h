@@ -47,6 +47,8 @@
  */
 //#define CNN_USE_OMP
 
+#define CNN_SINGLE_THREAD
+
 /**
  * define to use exceptions
  */

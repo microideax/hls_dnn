@@ -26,7 +26,7 @@
 */
 #pragma once
 #include <vector>
-#include <type_traits>
+//#include <type_traits>
 #include <limits>
 #include <cassert>
 #include <cstdio>
@@ -44,8 +44,8 @@
 #endif
 
 #ifndef CNN_USE_OMP
-#include <thread>
-#include <future>
+//#include <thread>
+//#include <future>
 #endif
 
 namespace tiny_dnn {
