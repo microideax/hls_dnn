@@ -85,7 +85,7 @@ public:
         void* p = ptr;
         ::new(p) U(value);
     }
-
+/*
 #if defined(_MSC_VER) && _MSC_VER <= 1800
     // -vc2013 doesn't support variadic templates
 #else
@@ -95,7 +95,7 @@ public:
         ::new(p) U(std::forward<Args>(args)...);
     }
 #endif
-
+*/
     template<class U>
     void construct(U* ptr) {
         void* p = ptr;

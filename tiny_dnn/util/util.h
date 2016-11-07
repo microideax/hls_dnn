@@ -27,8 +27,8 @@
 #pragma once
 #include <vector>
 #include <functional>
-#include <random>
-#include <type_traits>
+// #include <random>
+// #include <type_traits>
 #include <limits>
 #include <cassert>
 #include <cstdio>
@@ -85,8 +85,9 @@ inline bool is_little_endian() {
 template<typename T>
 size_t max_index(const T& vec) {
     //auto begin_iterator = std::begin(vec);
-    const_iterator<T> begin_iterator = std::begin(vec);
-    return std::max_element(begin_iterator, std::end(vec)) - begin_iterator;
+    // std::vector<T> begin_iterator = std::begin(vec);
+    // T::iterator begin_iterator = std::begin(vec);
+    return std::max_element(std::begin(vec), std::end(vec)) - std::begin(vec);
 }
 
 template<typename T, typename U>
@@ -107,8 +108,11 @@ inline bool isfinite(float_t x) {
 }
 
 template <typename Container> inline bool has_infinite(const Container& c) {
-    for (auto v : c)
-        if (!isfinite(v)) return true;
+    // for (auto v : c)
+    //     if (!isfinite(v)) return true;
+    for (int i=0; i< c.size(); i++){
+        if (isfinite(c[i])) return true;
+    }
     return false;
 }
 
@@ -256,8 +260,11 @@ std::vector<T> filter(const std::vector<T>& vec, Pred p) {
 template <typename Result, typename T, typename Pred>
 std::vector<Result> map_(const std::vector<T>& vec, Pred p) {
     std::vector<Result> res;
-    for (auto& v : vec) {
-        res.push_back(p(v));
+    // for (auto& v : vec) {
+    //     res.push_back(p(v));
+    // }
+    for(int i = 0; i < vec.size(); i++) {
+        res.push_back(p(vec[i]));
     }
     return res;
 }
@@ -324,20 +331,26 @@ inline std::vector<vector_type> std_output_order(bool has_activation) {
 }
 
 inline void fill_tensor(tensor_t& tensor, float_t value) {
-    for (auto& t : tensor) {
-        std::fill(t.begin(), t.end(), value);
+    // for (auto& t : tensor) {
+    //     std::fill(t.begin(), t.end(), value);
+    // }
+    for (int i=0; i< tensor.size(); i++){
+        std::fill(tensor[i].begin(), tensor[i].end(), value);
     }
 }
 
 inline void fill_tensor(tensor_t& tensor, float_t value, cnn_size_t size) {
-    for (auto& t : tensor) {
-        t.resize(size, value);
+    // for (auto& t : tensor) {
+    //     t.resize(size, value);
+    // }
+    for (int i=0; i< tensor.size(); i++) {
+        tensor[i].resize(size, value);
     }
 }
 
 // get all platforms (drivers), e.g. NVIDIA
 // https://github.com/CNugteren/CLCudaAPI/blob/master/samples/device_info.cc
-
+/*
 inline void printAvailableDevice(const cnn_size_t platform_id,
                                  const cnn_size_t device_id) {
 #if defined(USE_OPENCL) || defined(USE_CUDA)
@@ -373,7 +386,7 @@ inline void printAvailableDevice(const cnn_size_t platform_id,
     nn_warn("TinyDNN was not build with OpenCL or CUDA support.");
 #endif
 }
-
+*/
 #if defined(_MSC_VER) && (_MSC_VER <= 1800)
 #define CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
 #define CNN_DEFAULT_ASSIGNMENT_OPERATOR_UNAVAILABLE

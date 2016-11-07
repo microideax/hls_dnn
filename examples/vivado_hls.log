@@ -6,7 +6,7 @@
 ================================================================
 @I [LIC-101] Checked out feature [HLS]
 @I [HLS-10] Running '/nfs/app/Xilinx/Vivado_HLS/2014.4/bin/unwrapped/lnx64.o/vivado_hls'
-            for user 'yaochen' on host 'yao-ADSC' (Linux_x86_64 version 4.4.0-45-generic) on Sun Nov 06 16:27:41 SGT 2016
+            for user 'yaochen' on host 'yao-ADSC' (Linux_x86_64 version 4.4.0-45-generic) on Mon Nov 07 14:01:47 SGT 2016
             in directory '/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples'
 @I [HLS-10] Opening project '/home/yaochen/work/NN/NN_hls/tiny_dnn_LeNet5/examples/hls_proj'.
 @I [HLS-10] Adding design file 'stb_image/stb_image.h' to the project
@@ -163,8 +163,8 @@ In file included from ../../../../../tiny_dnn/nodes.h:32:0,
                  from ../../../../../tiny_dnn/network.h:37,
                  from ../../../../../tiny_dnn/tiny_dnn.h:30,
                  from ../../../../lenet.cpp:11:
-../../../../../tiny_dnn/util/util.h:340:13: warning: unused parameter ‘platform_id’ [-Wunused-parameter]
-../../../../../tiny_dnn/util/util.h:340:13: warning: unused parameter ‘device_id’ [-Wunused-parameter]
+../../../../../tiny_dnn/util/util.h:345:13: warning: unused parameter ‘platform_id’ [-Wunused-parameter]
+../../../../../tiny_dnn/util/util.h:345:13: warning: unused parameter ‘device_id’ [-Wunused-parameter]
 In file included from ../../../../../tiny_dnn/layers/../node.h:40:0,
                  from ../../../../../tiny_dnn/layers/layer.h:38,
                  from ../../../../../tiny_dnn/nodes.h:33,
@@ -374,21 +374,39 @@ In file included from ../../../../../tiny_dnn/layers/../core/kernels/fully_conne
 ../../../../../tiny_dnn/layers/../core/kernels/fully_connected_op_nnpack.h:35:1: warning: unused parameter ‘params’ [-Wunused-parameter]
 ../../../../../tiny_dnn/layers/../core/kernels/fully_connected_op_nnpack.h:35:1: warning: unused parameter ‘layer_parallelize’ [-Wunused-parameter]
 ../../../../lenet.cpp: In function ‘int test_vec_t(int)’:
-../../../../lenet.cpp:173:20: warning: name lookup of ‘i’ changed [enabled by default]
-../../../../lenet.cpp:158:5: warning:   matches this ‘i’ under ISO standard rules [enabled by default]
-../../../../lenet.cpp:162:13: warning:   matches this ‘i’ under old rules [enabled by default]
+../../../../lenet.cpp:169:20: warning: name lookup of ‘i’ changed [enabled by default]
+../../../../lenet.cpp:161:5: warning:   matches this ‘i’ under ISO standard rules [enabled by default]
+../../../../lenet.cpp:165:13: warning:   matches this ‘i’ under old rules [enabled by default]
 ../../../../lenet.cpp: At global scope:
-../../../../lenet.cpp:188:5: warning: unused parameter ‘argc’ [-Wunused-parameter]
-../../../../lenet.cpp:188:5: warning: unused parameter ‘argv’ [-Wunused-parameter]
+../../../../lenet.cpp:177:5: warning: unused parameter ‘argc’ [-Wunused-parameter]
+../../../../lenet.cpp:177:5: warning: unused parameter ‘argv’ [-Wunused-parameter]
 In file included from ../../../../../tiny_dnn/nodes.h:32:0,
                  from ../../../../../tiny_dnn/network.h:37,
                  from ../../../../../tiny_dnn/tiny_dnn.h:30,
                  from ../../../../lenet.cpp:11:
+../../../../../tiny_dnn/util/util.h: In function ‘std::vector<_RealType> tiny_dnn::map_(const std::vector<T>&, Pred) [with Result = std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >, T = std::shared_ptr<tiny_dnn::edge>, Pred = tiny_dnn::layer::backward(const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > > >&)::<lambda(tiny_dnn::edgeptr_t)>]’:
+../../../../../tiny_dnn/layers/layer.h:431:10:   instantiated from here
+../../../../../tiny_dnn/util/util.h:260:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
 ../../../../../tiny_dnn/util/util.h: In member function ‘T tiny_dnn::index3d<T>::get_index(T, T, T) const [with T = long unsigned int]’:
 ../../../../../tiny_dnn/layers/../core/kernels/conv2d.h:86:74:   instantiated from here
-../../../../../tiny_dnn/util/util.h:157:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
-../../../../../tiny_dnn/util/util.h:158:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
 ../../../../../tiny_dnn/util/util.h:159:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+../../../../../tiny_dnn/util/util.h:160:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+../../../../../tiny_dnn/util/util.h:161:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+In file included from ../../../../../tiny_dnn/tiny_dnn.h:38:0,
+                 from ../../../../lenet.cpp:11:
+../../../../../tiny_dnn/layers/convolutional_layer.h: At global scope:
+../../../../../tiny_dnn/layers/convolutional_layer.h: In instantiation of ‘tiny_dnn::convolutional_layer<Activation>::convolutional_layer(tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::core::padding, bool, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::core::backend_t, tiny_dnn::core::backend_params) [with Activation = tiny_dnn::activation::tan_h, tiny_dnn::cnn_size_t = long unsigned int]’:
+../../../../lenet.cpp:96:53:   instantiated from here
+../../../../../tiny_dnn/layers/convolutional_layer.h:72:5: warning: unused parameter ‘b_params’ [-Wunused-parameter]
+../../../../../tiny_dnn/layers/convolutional_layer.h: In instantiation of ‘tiny_dnn::convolutional_layer<Activation>::convolutional_layer(tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, const tiny_dnn::core::connection_table&, tiny_dnn::core::padding, bool, tiny_dnn::cnn_size_t, tiny_dnn::cnn_size_t, tiny_dnn::core::backend_t, tiny_dnn::core::backend_params) [with Activation = tiny_dnn::activation::tan_h, tiny_dnn::cnn_size_t = long unsigned int]’:
+../../../../lenet.cpp:99:41:   instantiated from here
+../../../../../tiny_dnn/layers/convolutional_layer.h:145:5: warning: unused parameter ‘b_params’ [-Wunused-parameter]
+In file included from ../../../../../tiny_dnn/tiny_dnn.h:44:0,
+                 from ../../../../lenet.cpp:11:
+../../../../../tiny_dnn/layers/average_pooling_layer.h: In instantiation of ‘void tiny_dnn::tiny_average_pooling_back_kernel(const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, const shape3d&, tiny_dnn::float_t, std::vector<typename tiny_dnn::partial_connected_layer<Activation>::io_connections>&, std::vector<typename tiny_dnn::partial_connected_layer<Activation>::wo_connections>&, std::vector<std::vector<long unsigned int> >&) [with Activation = tiny_dnn::activation::tan_h, tiny_dnn::shape3d = tiny_dnn::index3d<long unsigned int>, tiny_dnn::float_t = float, typename tiny_dnn::partial_connected_layer<Activation>::io_connections = std::vector<std::pair<long unsigned int, long unsigned int> >, typename tiny_dnn::partial_connected_layer<Activation>::wo_connections = std::vector<std::pair<long unsigned int, long unsigned int> >]’:
+../../../../../tiny_dnn/layers/average_pooling_layer.h:225:9:   instantiated from ‘void tiny_dnn::average_pooling_layer<Activation>::back_propagation(const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, const std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&, std::vector<std::vector<std::vector<float, tiny_dnn::aligned_allocator<float, 64ul> > >*>&) [with Activation = tiny_dnn::activation::tan_h]’
+../../../../lenet.cpp:207:1:   instantiated from here
+../../../../../tiny_dnn/layers/average_pooling_layer.h:82:6: warning: unused parameter ‘out_data’ [-Wunused-parameter]
 testing_hls...32
 @I [SIM-1] CSim done with 0 errors.
 @I [HLS-10] Analyzing design file 'lenet.cpp' ... 
@@ -397,8 +415,8 @@ In file included from lenet.cpp:11:
 In file included from ./../tiny_dnn/tiny_dnn.h:30:
 In file included from ./../tiny_dnn/network.h:37:
 In file included from ./../tiny_dnn/nodes.h:32:
-In file included from ./../tiny_dnn/util/util.h:30:
-In file included from /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/random:34:
+In file included from ./../tiny_dnn/util/util.h:31:
+In file included from /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/type_traits:34:
 /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/c++0x_warning.h:32:2: error: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x. This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.
 #error This file requires compiler and library support for the upcoming \
  ^
@@ -439,12 +457,6 @@ In file included from ./../tiny_dnn/tiny_dnn.h:30:
 In file included from ./../tiny_dnn/network.h:37:
 In file included from ./../tiny_dnn/nodes.h:32:
 In file included from ./../tiny_dnn/util/util.h:39:
-./../tiny_dnn/util/aligned_allocator.h:92:28: warning: variadic templates are a C++11 extension [-Wc++11-extensions]
-    template<class U, class... Args>
-                           ^
-./../tiny_dnn/util/aligned_allocator.h:93:32: warning: rvalue references are a C++11 extension [-Wc++11-extensions]
-    void construct(U* ptr, Args&&... args) {
-                               ^
 ./../tiny_dnn/util/aligned_allocator.h:68:52: error: use of undeclared identifier 'nullptr'
     pointer allocate(size_type size, const void* = nullptr) {
                                                    ^
@@ -467,20 +479,6 @@ In file included from ./../tiny_dnn/util/util.h:39:
 /nfs/app/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/move.h:43:5: note: '__addressof' declared here
     __addressof(_Tp& __r)
     ^
-In file included from lenet.cpp:11:
-In file included from ./../tiny_dnn/tiny_dnn.h:30:
-In file included from ./../tiny_dnn/network.h:37:
-In file included from ./../tiny_dnn/nodes.h:32:
-In file included from ./../tiny_dnn/util/util.h:39:
-./../tiny_dnn/util/aligned_allocator.h:95:25: error: no member named 'forward' in namespace 'std'
-        ::new(p) U(std::forward<Args>(args)...);
-                   ~~~~~^
-./../tiny_dnn/util/aligned_allocator.h:95:33: error: 'Args' does not refer to a value
-        ::new(p) U(std::forward<Args>(args)...);
-                                ^
-./../tiny_dnn/util/aligned_allocator.h:92:32: note: declared here
-    template<class U, class... Args>
-                               ^
 In file included from lenet.cpp:11:
 In file included from ./../tiny_dnn/tiny_dnn.h:30:
 In file included from ./../tiny_dnn/network.h:37:
@@ -516,8 +514,17 @@ In file included from ./../tiny_dnn/util/util.h:41:
 ./../tiny_dnn/util/parallel_for.h:131:10: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
     for (auto &future : futures)
          ^
+./../tiny_dnn/util/parallel_for.h:131:25: error: use of undeclared identifier 'futures'
+    for (auto &future : futures)
+                        ^
+./../tiny_dnn/util/parallel_for.h:131:23: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+    for (auto &future : futures)
+                      ^
+./../tiny_dnn/util/parallel_for.h:145:1: error: 'inline' can only appear on functions
+inline
+^
 fatal error: too many errors emitted, stopping now [-ferror-limit=]
-5 warnings and 20 errors generated.
+4 warnings and 20 errors generated.
 Failed checking during preprocessing.
     while executing
 "source [lindex $::argv 1] "

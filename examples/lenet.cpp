@@ -13,21 +13,21 @@
 //#include "hls_video.h"
 //#include "hls_opencv.h"
 
-#include "../tiny_dnn/util/util.h"
+//#include "../tiny_dnn/util/util.h"
 
 using namespace tiny_dnn;
 using namespace tiny_dnn::activation;
 using namespace std;
 
-/*
+
 // rescale output to 0-100
 template <typename Activation>
 double rescale(double x) {
     Activation a;
     return 100.0 * (x - a.scale().first) / (a.scale().second - a.scale().first);
 }
-*/
-/*
+
+
 void convert_image(const std::string& imagefilename,
     double minv,
     double maxv,
@@ -74,8 +74,8 @@ bool save_image(const std::string& imagefilename,
 		stride_bytes);
 	return (ret != 0);
 }
-*/
-/*
+
+
 //void construct_net(network<sequential>& nn) {
 void construct_net(network<sequential>& nn) {
     // connection table [Y.Lecun, 1998 Table.1]
@@ -115,6 +115,7 @@ void recognize(network<sequential>& nn, vec_t& data, vec_t& res) {
     //return res;
 }
 
+
 void print_score(vec_t res)
 {
     vector<pair<double, int> > scores;
@@ -128,7 +129,7 @@ void print_score(vec_t res)
     for (int i = 0; i < 10; i++)
         cout << scores[i].second << "," << scores[i].first << endl;
 }
-*/
+
 
 /*
     // save outputs of each layer
@@ -165,21 +166,7 @@ int test_vec_t(int i) {
     {
 	abrr[i] = arr[i];
     }
-/*
-    if(v[0] == 0) {
-       return 0;
-    }else{
-	v[0] = 61;
-    }
-*/
     abrr.push_back(i);
-
-
-    //for(int x: abrr) {
-    //  cout << x;
-    //}
-
-
     //return abrr.size(); 
     return abrr[3] + i;
 
@@ -190,14 +177,14 @@ int test_vec_t(int i) {
 int main(int argc, char** argv) {
 
     int c = 3;
-/*
+
     network<sequential> nn;
     vec_t res;
     vec_t data;
-*/
+
     int f = test_vec_t(c);
     //convert image to data matrix
-/*
+
     const std::string filename = "4.bmp";
     convert_image(filename, -1.0, 1.0, 32, 32, data);
 
@@ -211,7 +198,7 @@ int main(int argc, char** argv) {
 
     //print out ranked scores 
     print_score(res);
-*/ 
+ 
     int a[10], b[10];
     cout<<"testing_hls..."<< f << endl;
     test_hls(a,b);
