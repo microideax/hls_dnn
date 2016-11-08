@@ -96,12 +96,12 @@ void xparallel_for(size_t begin, size_t end, const Func& f) {
 // }
 
 // #elif defined(CNN_SINGLE_THREAD)
-#if defined(CNN_SINGLE_THREAD)
+// #if defined(CNN_SINGLE_THREAD)
 
-template<typename Func>
-void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
-    xparallel_for(static_cast<size_t>(begin), static_cast<size_t>(end), f);
-}
+// template<typename Func>
+// void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
+//     xparallel_for(static_cast<size_t>(begin), static_cast<size_t>(end), f);
+// }
 
 // #else
 
@@ -133,7 +133,7 @@ void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
 //         future.wait();
 // }
 
-#endif
+// #endif
 
 // #endif // CNN_USE_TBB
 
