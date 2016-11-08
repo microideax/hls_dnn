@@ -4,12 +4,12 @@
 ############################################################
 open_project hls_proj
 
-#set_top recognize
+set_top recognize
 #set_top convert_image
 #set_top predict
 #set_top construct_net
 #set_top test_hls
-set_top test_vec_t
+#set_top test_vec_t
 
 add_files stb_image/stb_image.h
 add_files stb_image/stb_image_resize.h

@@ -1,0 +1,9 @@
+dependencies
+bin/*
+obj/*
+hls_proj/*
+*.swp
+*~
+*.html
+*.o
+*.log
