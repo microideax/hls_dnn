@@ -50,22 +50,22 @@
 
 namespace tiny_dnn {
 
-#ifdef CNN_USE_TBB
+// #ifdef CNN_USE_TBB
 
-static tbb::task_scheduler_init tbbScheduler(tbb::task_scheduler_init::automatic);//tbb::task_scheduler_init::deferred);
+// static tbb::task_scheduler_init tbbScheduler(tbb::task_scheduler_init::automatic);//tbb::task_scheduler_init::deferred);
 
-typedef tbb::blocked_range<int> blocked_range;
+// typedef tbb::blocked_range<int> blocked_range;
 
-template<typename Func>
-void parallel_for(int begin, int end, const Func& f, int grainsize) {
-    tbb::parallel_for(blocked_range(begin, end, end - begin > grainsize ? grainsize : 1), f);
-}
-template<typename Func>
-void xparallel_for(int begin, int end, const Func& f) {
-    f(blocked_range(begin, end, 100));
-}
+// template<typename Func>
+// void parallel_for(int begin, int end, const Func& f, int grainsize) {
+//     tbb::parallel_for(blocked_range(begin, end, end - begin > grainsize ? grainsize : 1), f);
+// }
+// template<typename Func>
+// void xparallel_for(int begin, int end, const Func& f) {
+//     f(blocked_range(begin, end, 100));
+// }
 
-#else
+// #else
 
 struct blocked_range {
     typedef int const_iterator;
@@ -86,55 +86,56 @@ void xparallel_for(size_t begin, size_t end, const Func& f) {
     f(r);
 }
 
-#if defined(CNN_USE_OMP)
+// #if defined(CNN_USE_OMP)
 
-template<typename Func>
-void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
-    #pragma omp parallel for
-    for (int i=begin; i<end; ++i)
-        f(blocked_range(i,i+1));
-}
+// template<typename Func>
+// void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
+//     #pragma omp parallel for
+//     for (int i=begin; i<end; ++i)
+//         f(blocked_range(i,i+1));
+// }
 
-#elif defined(CNN_SINGLE_THREAD)
+// #elif defined(CNN_SINGLE_THREAD)
+#if defined(CNN_SINGLE_THREAD)
 
 template<typename Func>
 void parallel_for(int begin, int end, const Func& f, int /*grainsize*/) {
     xparallel_for(static_cast<size_t>(begin), static_cast<size_t>(end), f);
 }
 
-#else
+// #else
 
-template<typename Func>
-void parallel_for(int start, int end, const Func &f, int /*grainsize*/) {
-    int nthreads = std::thread::hardware_concurrency();
-    int blockSize = (end - start) / nthreads;
-    if (blockSize*nthreads < end - start)
-        blockSize++;
+// template<typename Func>
+// void parallel_for(int start, int end, const Func &f, int /*grainsize*/) {
+//     int nthreads = std::thread::hardware_concurrency();
+//     int blockSize = (end - start) / nthreads;
+//     if (blockSize*nthreads < end - start)
+//         blockSize++;
 
-    std::vector<std::future<void>> futures;
+//     std::vector<std::future<void>> futures;
 
-    int blockStart = start;
-    int blockEnd = blockStart + blockSize;
-    if (blockEnd > end) blockEnd = end;
+//     int blockStart = start;
+//     int blockEnd = blockStart + blockSize;
+//     if (blockEnd > end) blockEnd = end;
 
-    for (int i = 0; i < nthreads; i++) {
-        futures.push_back(std::move(std::async(std::launch::async, [blockStart, blockEnd, &f] {
-            f(blocked_range(blockStart, blockEnd));
-        })));
+//     for (int i = 0; i < nthreads; i++) {
+//         futures.push_back(std::move(std::async(std::launch::async, [blockStart, blockEnd, &f] {
+//             f(blocked_range(blockStart, blockEnd));
+//         })));
 
-        blockStart += blockSize;
-        blockEnd = blockStart + blockSize;
-        if (blockStart >= end) break;
-        if (blockEnd > end) blockEnd = end;
-    }
+//         blockStart += blockSize;
+//         blockEnd = blockStart + blockSize;
+//         if (blockStart >= end) break;
+//         if (blockEnd > end) blockEnd = end;
+//     }
 
-    for (auto &future : futures)
-        future.wait();
-}
+//     for (auto &future : futures)
+//         future.wait();
+// }
 
 #endif
 
-#endif // CNN_USE_TBB
+// #endif // CNN_USE_TBB
 
 template<typename T, typename U>
 bool value_representation(U const &value) {

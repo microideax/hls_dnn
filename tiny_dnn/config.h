@@ -52,12 +52,12 @@
 /**
  * define to use exceptions
  */
-#define CNN_USE_EXCEPTIONS
+// #define CNN_USE_EXCEPTIONS
 
 /**
  * comment out if you want tiny-dnn to be quiet 
  */
-#define CNN_USE_STDOUT
+// #define CNN_USE_STDOUT
 
 /**
  * number of task in batch-gradient-descent.
@@ -66,20 +66,20 @@
 #ifdef CNN_USE_OMP
 #define CNN_TASK_SIZE 100
 #else
-#define CNN_TASK_SIZE 8
+#define CNN_TASK_SIZE 1
 #endif
 
-#if !defined(_MSC_VER) || (_MSC_VER >= 1900) // default generation of move constructor is unsupported in VS2013
-#define CNN_USE_DEFAULT_MOVE_CONSTRUCTORS
-#endif
+// #if !defined(_MSC_VER) || (_MSC_VER >= 1900) // default generation of move constructor is unsupported in VS2013
+// #define CNN_USE_DEFAULT_MOVE_CONSTRUCTORS
+// #endif
 
-#if !defined(_MSC_VER)
-#define CNN_USE_GEMMLOWP // gemmlowp doesn't support MSVC
-#endif
+// #if !defined(_MSC_VER)
+// #define CNN_USE_GEMMLOWP // gemmlowp doesn't support MSVC
+// #endif
 
-#if defined _WIN32
-#define CNN_WINDOWS
-#endif
+// #if defined _WIN32
+// #define CNN_WINDOWS
+// #endif
 
 namespace tiny_dnn {
 
