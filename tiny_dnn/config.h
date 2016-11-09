@@ -27,6 +27,8 @@
 #pragma once
 #include <cstddef>
 
+// #define HLS_COMPATIBLE
+
 /**
  * define if you want to use intel TBB library
  */

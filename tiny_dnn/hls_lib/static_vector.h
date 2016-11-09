@@ -46,10 +46,16 @@ class s_vector {
     }
 
     T & operator[](unsigned int index) {
+#ifndef HLS_COMPATIBLE
+      assert(index < cur);
+#endif
       return elems[index];  
     }
     
     const T & operator[](unsigned int index) const {
+#ifndef HLS_COMPATIBLE
+      assert(index < cur);
+#endif
       return elems[index];
     }    
 

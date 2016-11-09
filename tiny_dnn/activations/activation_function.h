@@ -106,8 +106,11 @@ public:
         float_t alpha = *std::max_element(v.begin(), v.end());
         float_t numer = std::exp(v[i] - alpha);
         float_t denom = float_t(0);
-        for (auto x : v)
-            denom += std::exp(x - alpha);
+        // for (auto x : v)
+        //     denom += std::exp(x - alpha);
+        for (int i=0; i < v.size(); i++){
+            denom += std::exp(v[i] - alpha);
+        }
         return numer / denom;
     }
 

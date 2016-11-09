@@ -19,6 +19,8 @@ using namespace tiny_dnn;
 using namespace tiny_dnn::activation;
 using namespace std;
 
+typedef s_vector<float, 16> hls_vec;
+typedef s_vector<hls_vec, 16> hls_tensor;
 
 // rescale output to 0-100
 template <typename Activation>
@@ -150,41 +152,36 @@ void print_score(vec_t res)
     }
 */
 
-void test_hls(int* a, int* b) {
-//    int a[10], b[10];
-    for( int i=0; i<10; i++){
-	a[i] = i;
-        b[i] += i;
-    }
-}
-
-int test_vec_t(int i) {
+int test_vec_t(float in_vec) {
     
-    static const int arr[] = {16,2,77,29};
-    s_vector<int, 16> abrr;
+    static const float arr[] = {16,2,77,29};
+    
+    hls_vec abrr;
+    hls_tensor bbrr;
+
     for(int i=0; i<4; i++)
     {
-	abrr[i] = arr[i];
+	    abrr.push_back(arr[i]);
     }
-    abrr.push_back(i);
+    abrr.push_back(in_vec);
+    bbrr.push_back(abrr);
     //return abrr.size(); 
-    return abrr[3] + i;
-
-    
+    return bbrr[0][0] + in_vec;    
 }
 
 
 int main(int argc, char** argv) {
 
-    int c = 3;
+    float c = 3;
 
     network<sequential> nn;
     vec_t res;
     vec_t data;
 
     int f = test_vec_t(c);
+    cout<<"testing_hls..."<< f << endl;
+    
     //convert image to data matrix
-
     const std::string filename = "4.bmp";
     convert_image(filename, -1.0, 1.0, 32, 32, data);
 
@@ -198,10 +195,6 @@ int main(int argc, char** argv) {
 
     //print out ranked scores 
     print_score(res);
-/**/ 
-    int a[10], b[10];
-    cout<<"testing_hls..."<< f << endl;
-    test_hls(a,b);
-    return 0;
-
+/**/
+    return 0; 
 }

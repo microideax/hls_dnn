@@ -339,9 +339,12 @@ public:
      * @param phase phase of network, could be train or test
      */
     void set_netphase(net_phase phase) {
-        for (auto n : net_) {
-            n->set_context(phase);
-        }
+        // for (auto n : net_) {
+        //     n->set_context(phase);
+        // }
+    for(int i=0; i < net_.size(); i++){
+        net_[i]->set_context(phase);
+    }
     }
 
     /**

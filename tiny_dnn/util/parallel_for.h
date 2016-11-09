@@ -35,18 +35,18 @@
 #include "nn_error.h"
 #include "../config.h"
 
-#ifdef CNN_USE_TBB
-#ifndef NOMINMAX
-#define NOMINMAX // tbb includes windows.h in tbb/machine/windows_api.h
-#endif
-#include <tbb/tbb.h>
-#include <tbb/task_group.h>
-#endif
+// #ifdef CNN_USE_TBB
+// #ifndef NOMINMAX
+// #define NOMINMAX // tbb includes windows.h in tbb/machine/windows_api.h
+// #endif
+// #include <tbb/tbb.h>
+// #include <tbb/task_group.h>
+// #endif
 
-#ifndef CNN_USE_OMP
+// #ifndef CNN_USE_OMP
 //#include <thread>
 //#include <future>
-#endif
+// #endif
 
 namespace tiny_dnn {
 
