@@ -115,7 +115,7 @@ add_files ../tiny_dnn/util/math_functions.h
 add_files ../tiny_dnn/util/nn_error.h
 add_files ../tiny_dnn/util/parallel_for.h
 add_files ../tiny_dnn/util/product.h
-add_files ../tiny_dnn/util/random.h
+add_files -tb ../tiny_dnn/util/random.h
 add_files ../tiny_dnn/util/target_cost.h
 add_files ../tiny_dnn/util/util.h
 add_files ../tiny_dnn/util/weight_init.h

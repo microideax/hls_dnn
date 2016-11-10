@@ -81,9 +81,9 @@ private:
 };
 
 template<typename Func>
-void xparallel_for(size_t begin, size_t end, const Func& f) {
+void xparallel_for(size_t begin, size_t end, const Func& ff) {
     blocked_range r(begin, end);
-    f(r);
+    ff(r);
 }
 
 // #if defined(CNN_USE_OMP)
@@ -158,22 +158,38 @@ bool value_representation(U const &value) {
 
 template<typename T, typename Func>
 // inline
-void for_(bool parallelize, int begin, T end, Func f, int grainsize = 100) {
+void for_(bool parallelize, int begin, T end, Func ff, int grainsize = 100) {
     // static_assert(std::is_integral<T>::value, "end must be integral type");
     // for_(typename std::is_unsigned<T>::type(), parallelize, begin, end, f, grainsize);
-    xparallel_for(begin, static_cast<int>(end), f);
+    xparallel_for(begin, static_cast<int>(end), ff);
 }
 
+// template <typename Func>
+// void func_s(Func f, const blocked_range& r) {
+//     for(int i= r.begin(); i< r.end(); i++)
+//         f(r);
+// }
+
+// template <typename T, typename Func>
+// void for_i(bool parallelize, T size, Func f, int grainsize = 100)
+// {
+//     for_(parallelize, 0, size, [&](const blocked_range& r) {
+// // #ifdef CNN_USE_OMP
+// // #pragma omp parallel for
+// // #endif
+//         for (int i = r.begin(); i < r.end(); i++)
+//             f(i);
+//     }, grainsize);
+// }
 template <typename T, typename Func>
 void for_i(bool parallelize, T size, Func f, int grainsize = 100)
 {
-    for_(parallelize, 0, size, [&](const blocked_range& r) {
-// #ifdef CNN_USE_OMP
-// #pragma omp parallel for
-// #endif
-        for (int i = r.begin(); i < r.end(); i++)
-            f(i);
-    }, grainsize);
+    // blocked_range r(0, size);
+    // for_(parallelize, 0, size, &func_s(f, r), grainsize);
+    //  for_(parallelize, 0, size, f_t(f, r), grainsize);
+    for( int i = 0 ; i < size; i++) {
+        f(i);
+    }
 }
 
 template <typename T, typename Func>

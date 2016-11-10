@@ -53,6 +53,7 @@ protected:
  * Understanding the difficulty of training deep feedforward neural networks
  * Proc. AISTATS 10, May 2010, vol.9, pp249-256
  **/
+
 class xavier : public scalable {
 public:
     xavier() : scalable(float_t(6)) {}
@@ -72,6 +73,8 @@ public:
  * Efficient backprop
  * Neural Networks, Tricks of the Trade, Springer, 1998
  **/
+
+/*
 class lecun : public scalable {
 public:
     lecun() : scalable(float_t(1)) {}
@@ -98,7 +101,7 @@ public:
         gaussian_rand(weight->begin(), weight->end(), float_t(0), scale_);
     }
 };
-
+*/
 class constant : public scalable {
 public:
     constant() : scalable(float_t(0)) {}
@@ -111,7 +114,7 @@ public:
         std::fill(weight->begin(), weight->end(), scale_);
     }
 };
-
+/*
 class he : public scalable {
 public:
     he() : scalable(float_t(2)) {}
@@ -125,6 +128,6 @@ public:
         gaussian_rand(weight->begin(), weight->end(), float_t(0), sigma);
     }
 };
-
+*/
 } // namespace weight_init
 } // namespace tiny_dnn
