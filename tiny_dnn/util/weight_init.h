@@ -25,7 +25,9 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 #pragma once
+#include <stdlib.h>
 #include "../util/util.h"
+
 
 namespace tiny_dnn {
 namespace weight_init {
@@ -46,6 +48,14 @@ protected:
     float_t scale_;
 };
 
+
+void my_uniform_rand(vec_t& weight, float_t min, float_t max) {
+  float_t range = (max - min);
+  for(int i = 0; i < weight.size(); i++) {
+    weight[i] = rand() / (float_t) RAND_MAX * range - range / 2;  
+  }
+}
+
 /**
  * Use fan-in and fan-out for scaling
  *
@@ -62,7 +72,8 @@ public:
     void fill(vec_t *weight, cnn_size_t fan_in, cnn_size_t fan_out) {//Yao: deleted override
         const float_t weight_base = std::sqrt(scale_ / (fan_in + fan_out));
 
-        uniform_rand(weight->begin(), weight->end(), -weight_base, weight_base);     
+        // uniform_rand(weight->begin(), weight->end(), -weight_base, weight_base);    
+        my_uniform_rand(*weight, -weight_base, weight_base); 
     }
 };
 
