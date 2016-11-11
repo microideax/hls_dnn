@@ -40,6 +40,8 @@
 #include "lossfunctions/loss_function.h"
 #include "activations/activation_function.h"
 
+using namespace tiny_dnn::weight_init;
+
 namespace tiny_dnn {
 
 struct result {

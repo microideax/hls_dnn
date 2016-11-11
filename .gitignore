@@ -7,3 +7,6 @@ hls_proj/*
 *.html
 *.o
 *.log
+.cproject
+.project
+.settings/
