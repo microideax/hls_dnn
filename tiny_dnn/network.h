@@ -36,6 +36,7 @@
 
 #include "nodes.h"
 #include "util/util.h"
+#include "util/weight_init.h"
 #include "lossfunctions/loss_function.h"
 #include "activations/activation_function.h"
 
@@ -478,9 +479,9 @@ public:
                 break;
             case GRAD_CHECK_RANDOM:
                 for (int i = 0; i < 10; i++)
-                    if (!calc_delta<E>(in, v, w, dw, uniform_idx(w), eps)) return false;
+                    if (!calc_delta<E>(in, v, w, dw, /*uniform_idx(w)*/ my_uniform_idx(w), eps)) return false;
                 for (int i = 0; i < 10; i++)
-                    if (!calc_delta<E>(in, v, b, db, uniform_idx(b), eps)) return false;
+                    if (!calc_delta<E>(in, v, b, db, /*uniform_idx(w)*/ my_uniform_idx(b), eps)) return false;
                 break;
             default:
                 throw nn_error("unknown grad-check type");

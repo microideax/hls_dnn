@@ -39,7 +39,7 @@
 #include "aligned_allocator.h"
 #include "nn_error.h"
 #include "parallel_for.h"
-#include "random.h"
+// #include "random.h"
 
 /*
 #if defined(USE_OPENCL) || defined(USE_CUDA)

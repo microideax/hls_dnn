@@ -56,6 +56,21 @@ void my_uniform_rand(vec_t& weight, float_t min, float_t max) {
   }
 }
 
+int my_uniform_idx(vec_t w) {
+    // float_t range = (w -0.0);
+    // float_t rand_num;
+    // return (int)(rand_num = rand() / (float_t) RAND_MAX * range - range / 2);  
+    // for (int i=0; i<w.size(); i++){
+    //     w.push_back( (float_t)(rand() ));
+    // }
+    return rand();
+}
+
+bool my_bernoulli(float_t p){
+    return (rand() < RAND_MAX * p);
+}
+
+
 /**
  * Use fan-in and fan-out for scaling
  *

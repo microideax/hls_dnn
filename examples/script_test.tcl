@@ -130,7 +130,7 @@ add_files ../tiny_dnn/tiny_dnn.h
 
 add_files lenet.cpp
 
-add_files -cflags "-std=c++0x -pthread -pedantic -Wall -Wextra" -tb lenet.cpp
+add_files -cflags "-std=c++0x -fpermissive -pthread -pedantic -Wall -Wextra" -tb lenet.cpp
 add_files -tb 4.bmp
 add_files -tb LeNet-weights
 

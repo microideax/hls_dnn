@@ -25,9 +25,12 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 #pragma once
+#include "../util/weight_init.h"
 #include "../util/util.h"
 #include "../layers/layer.h"
 #include <algorithm>
+
+using namespace tiny_dnn::weight_init;
 
 namespace tiny_dnn {
 
@@ -127,7 +130,8 @@ public:
 
             if (phase_ == net_phase::train) {
                 for (size_t i = 0; i < in_vec.size(); i++)
-                    mask[i] = bernoulli(dropout_rate_);
+                    mask[i] = my_bernoulli(dropout_rate_);
+                    // mask[i] = (rand() < RAND_MAX * dropout_rate_);
 
                 for (size_t i = 0; i < in_vec.size(); i++)
                     out_vec[i] = mask[i] * scale_ * in_vec[i];

@@ -28,8 +28,10 @@
 #include <random>
 #include <type_traits>
 #include <limits>
+#include <stdlib.h>
 #include "nn_error.h"
 #include "../config.h"
+#include "util.h"
 
 namespace tiny_dnn {
 
