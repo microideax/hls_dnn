@@ -69,7 +69,7 @@ public:
 class sigmoid : public function {
 public:
     using function::df;
-    float_t f(const vec_t& v, cnn_size_t i) const { return float_t(1) / (float_t(1) + std::exp(-v[i])); }  //Yao: deleted override
+    float_t f(const vec_t& v, cnn_size_t i) const { return float_t(1) / (float_t(1) + exp(-v[i])); }  //Yao: deleted override
     float_t df(float_t y) const { return y * (float_t(1) - y); } //Yao: deleted override
     std::pair<float_t, float_t> scale() const { return std::make_pair(float_t(0.1), float_t(0.9)); } //Yao: deleted override
 };
@@ -104,12 +104,12 @@ class softmax : public function {
 public:
     float_t f(const vec_t& v, cnn_size_t i) const {//Yao: deleted override
         float_t alpha = *std::max_element(v.begin(), v.end());
-        float_t numer = std::exp(v[i] - alpha);
+        float_t numer = exp(v[i] - alpha);
         float_t denom = float_t(0);
         // for (auto x : v)
         //     denom += std::exp(x - alpha);
         for (int i=0; i < v.size(); i++){
-            denom += std::exp(v[i] - alpha);
+            denom += exp(v[i] - alpha);
         }
         return numer / denom;
     }
@@ -135,8 +135,8 @@ class tan_h : public function {
 public:
     using function::df;
     float_t f(const vec_t& v, cnn_size_t i) const {//Yao: deleted override
-        const float_t ep = std::exp(v[i]);
-        const float_t em = std::exp(-v[i]); 
+        const float_t ep = exp(v[i]);
+        const float_t em = exp(-v[i]); 
         return (ep - em) / (ep + em);
     }
 
@@ -167,8 +167,8 @@ class tan_hp1m2 : public function {
 public:
     using function::df;
     float_t f(const vec_t& v, cnn_size_t i) const {//Yao: deleted override
-        const float_t ep = std::exp(v[i]);
-        return ep / (ep + std::exp(-v[i]));
+        const float_t ep = exp(v[i]);
+        return ep / (ep + exp(-v[i]));
     }
 
     float_t df(float_t y) const { return 2 * y *(float_t(1) - y); }//Yao: deleted override
