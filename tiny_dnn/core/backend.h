@@ -63,8 +63,8 @@ class backend {
  public:
     // context holds solution-dependent parameters
     // context should be able to hold any types of structures (like boost::any)
-   explicit backend(context* ctx_ = nullptr) {}
-    // explicit backend(context* ctx_ = 0) {}
+//    explicit backend(context* ctx_ = nullptr) {}
+    explicit backend(context* ctx_ = 0) {}
 
     // core math functions
 
