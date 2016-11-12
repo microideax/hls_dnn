@@ -88,7 +88,9 @@ size_t max_index(const T& vec) {
     //auto begin_iterator = std::begin(vec);
     // std::vector<T> begin_iterator = std::begin(vec);
     // T::iterator begin_iterator = std::begin(vec);
-    return std::max_element(std::begin(vec), std::end(vec)) - std::begin(vec);
+    // return std::max_element(std::begin(vec), std::end(vec)) - std::begin(vec);
+    return std::max_element(vec.begin(), vec.end()) - vec.begin();
+
 }
 
 template<typename T, typename U>
@@ -153,10 +155,10 @@ struct index3d {
         height_ = height;
         depth_ = depth;
 
-        if ((long long) width * height * depth > std::numeric_limits<T>::max())
-            throw nn_error(
-            format_str("error while constructing layer: layer size too large for tiny-dnn\nWidthxHeightxChannels=%dx%dx%d >= max size of [%s](=%d)",
-            width, height, depth, typeid(T).name(), std::numeric_limits<T>::max()));
+        if ((long long) width * height * depth > std::numeric_limits<T>::max()){;}
+            // throw nn_error(
+            // format_str("error while constructing layer: layer size too large for tiny-dnn\nWidthxHeightxChannels=%dx%dx%d >= max size of [%s](=%d)",
+            // width, height, depth, typeid(T).name(), std::numeric_limits<T>::max()));
     }
 
     T get_index(T x, T y, T channel) const {
@@ -198,7 +200,7 @@ Stream& operator << (Stream& s, const index3d<T>& d) {
 }
 
 template <typename Stream, typename T>
-Stream& operator << (Stream& s, const std::vector<index3d<T>>& d) {
+Stream& operator << (Stream& s, const std::vector<index3d<T> >& d) {
     s << "[";
     for (cnn_size_t i = 0; i < d.size(); i++) {
         if (i) s << ",";
