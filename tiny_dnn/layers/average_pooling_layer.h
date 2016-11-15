@@ -60,10 +60,13 @@ void tiny_average_pooling_kernel(bool parallelize,
             float_t weight = W[d] * scale_factor;
             float_t bias = b[d];
             for (size_t i = 0; i < oarea; ++i, ++idx) {
-                const auto& connections = out2wi[idx];
+                const std::vector<std::pair<cnn_size_t, cnn_size_t>>& connections = out2wi[idx];
                 float_t value = float_t(0);
-                for (auto connection : connections)// 13.1%
-                    value += in[connection.second]; // 3.2%
+                // for (auto connection : connections)// 13.1%
+                //     value += in[connection.second]; // 3.2%
+                for (unsigned int j = 0; j < connections.size(); j++){
+                    value += in[connections[j].second];
+                }
                 value *= weight;
                 value += bias;
                 a[idx] = value;
@@ -110,9 +113,11 @@ void tiny_average_pooling_back_kernel(const std::vector<tensor_t*>&   in_data,
             const std::vector<std::pair<cnn_size_t, cnn_size_t>>& connections = weight2io[i];
             float_t diff = float_t(0);
 
-            for (auto connection : connections)
-                diff += prev_out[connection.first] * curr_delta[connection.second];
-
+            // for (auto connection : connections)
+            //     diff += prev_out[connection.first] * curr_delta[connection.second];
+            for (unsigned int j = 0; j < connections.size(); j++){
+                diff += prev_out[connections[j].first] * curr_delta[connections[j].second];
+            }
             dW[i] += diff * scale_factor;
         }
 
