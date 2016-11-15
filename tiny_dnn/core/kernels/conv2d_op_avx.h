@@ -47,12 +47,12 @@ void avx_conv2d_5x5_kernel(const core::conv_params& params,
                            const std::vector<float, Allocator>& bias,
                            std::vector<float, Allocator>&       a,
                            const bool layer_parallelize) {
-    assert(params.weight.height_ == 5 && params.weight.width_ == 5);
+    // assert(params.weight.height_ == 5 && params.weight.width_ == 5);
     
-    auto& out       = params.out;
-    auto& in_padded = params.in_padded;
-    auto& tbl       = params.tbl;
-    auto  w_stride  = params.w_stride;
+    index3d<cnn_size_t>& out       = params.out;
+    index3d<cnn_size_t>& in_padded = params.in_padded;
+    connection_table& tbl       = params.tbl;
+    size_t  w_stride  = params.w_stride;
     
     const size_t out_area = out.area();
     cnn_size_t oidx = 0;
@@ -279,10 +279,10 @@ void avx_conv2d_5x5_kernel(const core::conv_params& params,
                            const bool layer_parallelize) {
     assert(params.weight.height_ == 5 && params.weight.width_ == 5);
     
-    auto& out       = params.out;
-    auto& in_padded = params.in_padded;
-    auto& tbl       = params.tbl;
-    auto  w_stride  = params.w_stride;
+    index3d<cnn_size_t>& out       = params.out;
+    index3d<cnn_size_t>& in_padded = params.in_padded;
+    connection_table& tbl       = params.tbl;
+    size_t  w_stride  = params.w_stride;
     
     const size_t out_area = out.area();
     double bias_scale = params.has_bias ? 1.0 : 0.0;

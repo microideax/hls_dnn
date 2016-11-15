@@ -44,11 +44,11 @@ void avx_conv2d_5x5_back_kernel(const conv_params& params,
                                 std::vector<float, Allocator>&       db,
                                 std::vector<float, Allocator>&       curr_delta,
                                 std::vector<float, Allocator>*       prev_delta) {
-    auto& in        = params.in;
-    auto& out       = params.out;
-    auto& in_padded = params.in_padded;
-    auto& tbl       = params.tbl;
-    auto  w_stride  = params.w_stride;
+    index3d<cnn_size_t>& in        = params.in;
+    index3d<cnn_size_t>& out       = params.out;
+    index3d<cnn_size_t>& in_padded = params.in_padded;
+    connection_table& tbl       = params.tbl;
+    size_t  w_stride  = params.w_stride;
     const size_t in_padded_area = in_padded.area();
     float* pdelta_dst_org = &(*prev_delta)[0];
     const size_t  h_stride2 = params.h_stride * in_padded.width_;
@@ -377,7 +377,7 @@ void avx_conv2d_5x5_back_kernel(const conv_params& params,
         };
         const size_t remainder = out.width_ & 7;
         __m256i mask = _mm256_loadu_si256((const __m256i*)(masks + 8 - remainder));
-        auto& weight = params.weight;
+        index3d<cnn_size_t>& weight = params.weight;
         for (size_t inc = 0; inc < in.depth_; ++inc) {
             for (cnn_size_t outc = 0; outc < out.depth_; outc++) {
 

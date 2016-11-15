@@ -42,7 +42,7 @@ inline void tiny_maxpool_kernel(const tensor_t& in_data,
         std::vector<cnn_size_t>& max = max_idx[sample];
 
         for (cnn_size_t i = 0; i < out2in.size(); i++) {
-            const auto& in_index = out2in[i];
+            const std::vector<cnn_size_t>& in_index = out2in[i];
             float_t max_value = std::numeric_limits<float_t>::lowest();
 
             for (auto j : in_index) {
