@@ -85,7 +85,7 @@ public:
     explicit xavier(float_t value) : scalable(value) {}
 
     void fill(vec_t *weight, cnn_size_t fan_in, cnn_size_t fan_out) {//Yao: deleted override
-        const float_t weight_base = std::sqrt(scale_ / (fan_in + fan_out));
+        const float_t weight_base = sqrt(scale_ / (fan_in + fan_out));
 
         // uniform_rand(weight->begin(), weight->end(), -weight_base, weight_base);    
         my_uniform_rand(*weight, -weight_base, weight_base); 
