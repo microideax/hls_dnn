@@ -33,15 +33,15 @@ namespace activation {
 
 class function {
 public:
-    function() = default;
-    function(const function &) = default;
-#ifndef CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
-    function(function &&) = default;
-#endif
-    function &operator =(const function &) = default;
-#ifndef CNN_DEFAULT_ASSIGNMENT_OPERATOR_UNAVAILABLE
-    function &operator =(function &&) = default;
-#endif
+    function(){};
+    function(const function &){};
+// #ifndef CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
+//     function(function &&){};
+// #endif
+    function &operator =(const function &){};
+// #ifndef CNN_DEFAULT_ASSIGNMENT_OPERATOR_UNAVAILABLE
+//     function &operator =(function &&) = default;
+// #endif
     virtual ~function(){}; //Yao: Modified default destruct function
     virtual float_t f(const vec_t& v, cnn_size_t index) const = 0;
 
