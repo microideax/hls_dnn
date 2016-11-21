@@ -27,7 +27,7 @@
 #pragma once
 #include <sstream>
 #include <iomanip>
-#include <memory>
+//#include <memory>
 #include <numeric>
 #include <vector>
 #include <set>
@@ -50,7 +50,7 @@ class edge;
 
 typedef node* nodeptr_t;
 typedef std::shared_ptr<edge> edgeptr_t;
-
+//typedef edge* edgeptr_t;
 typedef layer* layerptr_t;
 
 /**
