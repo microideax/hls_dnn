@@ -1,1 +1,7 @@
 This is the readme file of the hls_dnn project.
+
+eclipse_debug/ folder only used for debuging the tiny_dnn lib into HLS compatible.
+
+Modify the code in Eclipse project and run the run.sh in ./example folder for g++ compilation.
+
+The vivado_hls script is included in the ./example folder for HLS hardware generation.
