@@ -60,7 +60,7 @@ struct stateful_optimizer : public optimizer {
 protected:
     template <int Index>
     vec_t& get(const vec_t& key) {
-        static_assert(Index < N, "index out of range");
+//        static_assert(Index < N, "index out of range");
         if (E_[Index][&key].empty())
             E_[Index][&key].resize(key.size(), float_t());
         return E_[Index][&key];
@@ -83,7 +83,7 @@ struct adagrad : public stateful_optimizer<1> {
 
         for_i(static_cast<int>(W.size()), [&](int i) {
             g[i] += dW[i] * dW[i];
-            W[i] -= alpha * dW[i] / (std::sqrt(g[i]) + eps);
+            W[i] -= alpha * dW[i] / (sqrt(g[i]) + eps);
         });
     }
 
@@ -107,7 +107,7 @@ struct RMSprop : public stateful_optimizer<1> {
         for_i(static_cast<int>(W.size()), [&](int i)
         {
             g[i] = mu * g[i] + (1 - mu) * dW[i] * dW[i];
-            W[i] -= alpha * dW[i] / std::sqrt(g[i] + eps);
+            W[i] -= alpha * dW[i] / sqrt(g[i] + eps);
         });
     }
 
@@ -137,7 +137,7 @@ struct adam : public stateful_optimizer<2> {
             mt[i] = b1 * mt[i] + (float_t(1) - b1) * dW[i];
             vt[i] = b2 * vt[i] + (float_t(1) - b2) * dW[i] * dW[i];
 
-            W[i] -= alpha * ( mt[i]/(float_t(1) -b1_t) ) / std::sqrt( (vt[i]/(float_t(1)-b2_t)) + eps);
+            W[i] -= alpha * ( mt[i]/(float_t(1) -b1_t) ) / sqrt( (vt[i]/(float_t(1)-b2_t)) + eps);
         });
     }
 
