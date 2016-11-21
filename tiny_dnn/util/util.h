@@ -108,7 +108,7 @@ inline void nop()
 
 template <typename T> inline T sqr(T value) { return value*value; }
 
-inline bool isfinite(float_t x) {
+inline bool is_finite(float_t x) {
     return x == x;
 }
 
@@ -116,7 +116,7 @@ template <typename Container> inline bool has_infinite(const Container& c) {
     // for (auto v : c)
     //     if (!isfinite(v)) return true;
     for (int i=0; i< c.size(); i++){
-        if (isfinite(c[i])) return true;
+        if (is_finite(c[i])) return true;
     }
     return false;
 }

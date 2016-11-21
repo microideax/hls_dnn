@@ -55,6 +55,9 @@ template <int N>
 struct stateful_optimizer : public optimizer {
     void reset() {//Yao: deleted override
         for (auto& e : E_) e.clear();
+//        for (unsigned int i=0; i < E_.size(); i++){
+//        	E_[i].clear();
+//        }
     }
 
 protected:
