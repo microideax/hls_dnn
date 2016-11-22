@@ -35,6 +35,9 @@
 #include <utility>
 #include <queue>
 
+#include "../hls_lib/static_unordered_set.h"
+#include "../hls_lib/static_vector.h"
+
 #include "../node.h"
 #include "../core/backend.h"
 #include "../core/framework/device.fwd.h"
@@ -71,8 +74,8 @@ class layer : public node {
      * @param in_type[N] type of input vector (data, weight, bias...)
      * @param out_type[M] type of output vector
      **/
-    layer(const std::vector<vector_type>& in_type,
-          const std::vector<vector_type>& out_type)
+    layer(const std::vector<int32_t>& in_type,
+          const std::vector<int32_t>& out_type)
             : node(in_type.size(), out_type.size()),
               initialized_(false),
               parallelize_(true),
@@ -264,9 +267,9 @@ class layer : public node {
         return out;
     }
 
-    std::vector<vector_type> in_types() const { return in_type_; }
+    std::vector<int32_t> in_types() const { return in_type_; }
 
-    std::vector<vector_type> out_types() const { return out_type_; }
+    std::vector<int32_t> out_types() const { return out_type_; }
 
 
     /**
@@ -572,8 +575,8 @@ class layer : public node {
     bool parallelize_;
     cnn_size_t in_channels_;   // number of input vectors
     cnn_size_t out_channels_;  // number of output vectors
-    std::vector<vector_type> in_type_;
-    std::vector<vector_type> out_type_;
+    std::vector<int32_t> in_type_;
+    std::vector<int32_t> out_type_;
     
     core::backend_t backend_type_;
     std::shared_ptr<core::backend> backend_;
@@ -716,8 +719,9 @@ inline void pooling_size_mismatch(cnn_size_t in_width,
 
 template <typename T, typename U>
 void graph_traverse(layer *root_node, T&& node_callback, U&& edge_callback) {
-    std::unordered_set<layer*> visited;
-    std::queue<layer*> S;
+//    std::unordered_set<layer*> visited;
+	static_unordered_set<layer*, 1000> visited;
+	std::queue<layer*> S;
 
     S.push(root_node);
 
@@ -739,8 +743,9 @@ void graph_traverse(layer *root_node, T&& node_callback, U&& edge_callback) {
             // TODO(nyanp): refactoring
             // which type of refactoring do you have in mind for that?
             layer* l = dynamic_cast<layer*>(p);
-            if (visited.find(l) == visited.end()) {
-                S.push(l);
+//            if (visited.find(l) == visited.end()) {
+            if (visited.contains(l)) {
+            	S.push(l);
             }
         }
 
@@ -749,7 +754,8 @@ void graph_traverse(layer *root_node, T&& node_callback, U&& edge_callback) {
             // TODO(nyanp): refactoring
             // which type of refactoring do you have in mind for that?
             layer* l = dynamic_cast<layer*>(n);
-            if (visited.find(l) == visited.end()) {
+//            if (visited.find(l) == visited.end()) {
+            if (visited.contains(l)) {
                 S.push(l);
             }
         }

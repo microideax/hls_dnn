@@ -124,8 +124,16 @@ template <typename Container> inline bool has_infinite(const Container& c) {
 template <typename Container>
 size_t max_size(const Container& c) {
     typedef typename Container::value_type value_t;
-    return std::max_element(c.begin(), c.end(),
-        [](const value_t& left, const value_t& right) { return left.size() < right.size(); })->size();
+    size_t max = -1;
+
+    for (int i = 0; i < c.size(); i++) {
+    	max = max > c[i].size() ? max : c[i].size();
+    }
+    return max;
+
+//    return std::max_element(c.begin(), c.end(),
+//        [](const value_t& left, const value_t& right) { return left.size() < right.size(); })
+//    ->size();
 }
 
 inline std::string format_str(const char *fmt, ...) {
@@ -274,19 +282,22 @@ std::vector<Result> map_(const std::vector<T>& vec, Pred p) {
     return res;
 }
 
-enum class vector_type : int32_t {
+//enum class vector_type : int32_t {
+namespace vector_type{
+//public:
     // 0x0001XXX : in/out data
-    data = 0x0001000, // input/output data, fed by other layer or input channel
+    const static int32_t data = 0x0001000; // input/output data, fed by other layer or input channel
 
     // 0x0002XXX : trainable parameters, updated for each back propagation
-    weight = 0x0002000,
-    bias = 0x0002001,
+    const static int32_t weight = 0x0002000;
+    const static int32_t bias = 0x0002001;
 
-    label = 0x0004000,
-    aux = 0x0010000 // layer-specific storage
+    const static int32_t label = 0x0004000;
+    const static int32_t aux = 0x0010000; // layer-specific storage
 };
 
-inline std::string to_string(vector_type vtype) {
+//inline std::string to_string(vector_type vtype) {
+inline std::string to_string(int32_t vtype) {
     switch (vtype)
     {
     case tiny_dnn::vector_type::data:
@@ -304,34 +315,48 @@ inline std::string to_string(vector_type vtype) {
     }
 }
 
-inline std::ostream& operator << (std::ostream& os, vector_type vtype) {
-    os << to_string(vtype);
-    return os;
-}
+//inline std::ostream& operator << (std::ostream& os, const int32_t vtype) {
+//    os << to_string(vtype);
+//    return os;
+//}
+//
+//inline int32_t operator & (vector_type lhs, vector_type rhs) {
+//    return (vector_type)(static_cast<int32_t>(lhs) & static_cast<int32_t>(rhs));
+//}
 
-inline vector_type operator & (vector_type lhs, vector_type rhs) {
-    return (vector_type)(static_cast<int32_t>(lhs) & static_cast<int32_t>(rhs));
-}
-
-inline bool is_trainable_weight(vector_type vtype) {
+inline bool is_trainable_weight(int32_t vtype) {
     return (vtype & vector_type::weight) == vector_type::weight;
 }
 
-inline std::vector<vector_type> std_input_order(bool has_bias) {
+inline std::vector<int32_t> std_input_order(bool has_bias) {
+	std::vector<int32_t> v_type;
     if (has_bias) {
-        return{ vector_type::data, vector_type::weight, vector_type::bias };
+//        return{ vector_type::data, vector_type::weight, vector_type::bias };
+    	v_type.push_back(vector_type::data);
+    	v_type.push_back(vector_type::weight);
+    	v_type.push_back(vector_type::bias);
+    	return v_type;
     }
     else {
-        return{ vector_type::data, vector_type::weight };
+//        return{ vector_type::data, vector_type::weight };
+    	v_type.push_back(vector_type::data);
+    	v_type.push_back(vector_type::weight);
+    	return v_type;
     }
 }
 
-inline std::vector<vector_type> std_output_order(bool has_activation) {
-    if (has_activation) {
-        return{ vector_type::data, vector_type::aux };
+inline std::vector<int32_t> std_output_order(bool has_activation) {
+	std::vector<int32_t> v_type;
+	if (has_activation) {
+//        return{ vector_type::data, vector_type::aux };
+    	v_type.push_back(vector_type::data);
+    	v_type.push_back(vector_type::aux);
+    	return v_type;
     }
     else {
-        return{ vector_type::data };
+//        return{ vector_type::data };
+    	v_type.push_back(vector_type::data);
+    	return v_type;
     }
 }
 
@@ -339,7 +364,7 @@ inline void fill_tensor(tensor_t& tensor, float_t value) {
     // for (auto& t : tensor) {
     //     std::fill(t.begin(), t.end(), value);
     // }
-    for (int i=0; i< tensor.size(); i++){
+    for (uint i=0; i< tensor.size(); i++){
         std::fill(tensor[i].begin(), tensor[i].end(), value);
     }
 }
@@ -348,7 +373,7 @@ inline void fill_tensor(tensor_t& tensor, float_t value, cnn_size_t size) {
     // for (auto& t : tensor) {
     //     t.resize(size, value);
     // }
-    for (int i=0; i< tensor.size(); i++) {
+    for (uint i=0; i< tensor.size(); i++) {
         tensor[i].resize(size, value);
     }
 }

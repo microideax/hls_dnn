@@ -179,7 +179,7 @@ int main(int argc, char** argv) {
     vec_t data;
 
     int f = test_vec_t(c);
-    cout<<"testing_hls..."<< f << endl;
+    std::cout<<"testing_hls..."<< f << endl;
     
     //convert image to data matrix
     const std::string filename = "4.bmp";

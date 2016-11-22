@@ -96,5 +96,6 @@ typedef float float_t;
  * change to smaller type if memory footprint is severe
  **/
 typedef std::size_t cnn_size_t;
+typedef unsigned int uint;
 
 }

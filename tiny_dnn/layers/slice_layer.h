@@ -44,7 +44,7 @@ public:
     typedef layer Base;
 
     /**
-     * @param in_shape Å@ [in] size (width * height * channels) of input data
+     * @param in_shape ÔøΩ@ [in] size (width * height * channels) of input data
      * @param slice_type  [in] target axis of slicing
      * @param num_outputs [in] number of output layers
      *
@@ -67,13 +67,13 @@ public:
      *   output[2]: 4x2x2x2
     **/
     slice_layer(const shape3d& in_shape, slice_type slice_type, cnn_size_t num_outputs)
-    : layer(std::vector<vector_type>(1, vector_type::data), std::vector<vector_type>(num_outputs, vector_type::data)),
+    : layer(std::vector<int32_t>(1, vector_type::data), std::vector<int32_t>(num_outputs, vector_type::data)),
       in_shape_(in_shape), slice_type_(slice_type), num_outputs_(num_outputs) {
         set_shape();
     }
 
     slice_layer(const layer& prev_layer, slice_type slice_type, cnn_size_t num_outputs)
-        : layer(std::vector<vector_type>(1, vector_type::data), std::vector<vector_type>(num_outputs, vector_type::data)),
+        : layer(std::vector<int32_t>(1, vector_type::data), std::vector<int32_t>(num_outputs, vector_type::data)),
         in_shape_(prev_layer.out_shape()[0]), slice_type_(slice_type), num_outputs_(num_outputs) {
         set_shape();
     }

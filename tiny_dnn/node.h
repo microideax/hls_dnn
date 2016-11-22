@@ -94,7 +94,7 @@ public:
  **/
 class edge {
  public:
-    edge(node* prev, const shape3d& shape, vector_type vtype)
+    edge(node* prev, const shape3d& shape, int32_t vtype)
         : shape_(shape),
           vtype_(vtype),
           data_({vec_t(shape.size())}),
@@ -138,12 +138,12 @@ class edge {
     const node* prev() const { return prev_; }
 
     const shape3d& shape() const { return shape_; }
-    vector_type vtype() const { return vtype_; }
+    int32_t vtype() const { return vtype_; }
     void add_next_node(node* next) { next_.push_back(next); }
 
  private:
     shape3d shape_;
-    vector_type vtype_;
+    int32_t vtype_;
     tensor_t data_;
     tensor_t grad_;
     node* prev_;               // previous node, "producer" of this tensor

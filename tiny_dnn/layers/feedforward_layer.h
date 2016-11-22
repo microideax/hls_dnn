@@ -36,7 +36,7 @@ namespace tiny_dnn {
 template<typename Activation>
 class feedforward_layer : public layer {
 public:
-    explicit feedforward_layer(const std::vector<vector_type>& in_data_type)
+    explicit feedforward_layer(const std::vector<int32_t>& in_data_type)
         : layer(in_data_type, std_output_order(true)) {}
     activation::function& activation_function() { return h_; }
     std::pair<float_t, float_t> out_value_range() const { return h_.scale(); }//Yao: deleted override

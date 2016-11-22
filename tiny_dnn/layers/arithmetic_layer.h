@@ -36,7 +36,7 @@ namespace tiny_dnn {
 class elementwise_add_layer : public layer {
 public:
     elementwise_add_layer(cnn_size_t num_args, cnn_size_t dim)
-    : layer(std::vector<vector_type>(num_args, vector_type::data), {vector_type::data}), num_args_(num_args), dim_(dim) {}
+    : layer(std::vector<int32_t>(num_args, vector_type::data), {vector_type::data}), num_args_(num_args), dim_(dim) {}
 
     std::string layer_type() const {//Yao: deleted override
         return "elementwise-add";

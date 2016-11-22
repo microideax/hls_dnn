@@ -36,13 +36,13 @@ namespace tiny_dnn {
 class concat_layer : public layer {
 public:
     concat_layer(const std::vector<shape3d>& in_shapes)
-    : layer(std::vector<vector_type>(in_shapes.size(), vector_type::data), {vector_type::data}),
+    : layer(std::vector<int32_t>(in_shapes.size(), vector_type::data), {vector_type::data}),
       in_shapes_(in_shapes) {
         set_outshape();
     }
 
     concat_layer(cnn_size_t num_args, cnn_size_t ndim)
-        : layer(std::vector<vector_type>(num_args, vector_type::data), { vector_type::data }),
+        : layer(std::vector<int32_t>(num_args, vector_type::data), { vector_type::data }),
         in_shapes_(std::vector<shape3d>(num_args, shape3d(ndim,1,1))) {
         set_outshape();
     }
