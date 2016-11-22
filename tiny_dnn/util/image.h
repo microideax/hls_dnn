@@ -27,8 +27,10 @@
 #pragma once
 #include <vector>
 #include <fstream>
-#include <cstdint>
+//#include <cstdint>
 #include <algorithm>
+#include <float.h>
+#include <utility>
 
 namespace tiny_dnn {
 
@@ -51,7 +53,7 @@ public:
 
     image(const image& rhs) : width_(rhs.width_), height_(rhs.height_), depth_(rhs.depth_), data_(rhs.data_) {}
 
-    image(const image&& rhs) : width_(rhs.width_), height_(rhs.height_), depth_(rhs.depth_), data_(std::move(rhs.data_)) {}
+//    image(const image&& rhs) : width_(rhs.width_), height_(rhs.height_), depth_(rhs.depth_), data_(rhs.data_) {}
 
     image& operator = (const image& rhs) {
         width_ = rhs.width_;
@@ -61,13 +63,13 @@ public:
         return *this;
     }
 
-    image& operator = (const image&& rhs) {
-        width_ = rhs.width_;
-        height_ = rhs.height_;
-        depth_ = rhs.depth_;
-        data_ = std::move(rhs.data_);
-        return *this;
-    }
+//    image& operator = (const image&& rhs) {
+//        width_ = rhs.width_;
+//        height_ = rhs.height_;
+//        depth_ = rhs.depth_;
+//        data_ = std::move(rhs.data_);
+//        return *this;
+//    }
 
     void write(const std::string& path) const { // WARNING: This is OS dependent (writes of bytes with reinterpret_cast depend on endianness)
         std::ofstream ofs(path.c_str(), std::ios::binary | std::ios::out);
@@ -134,16 +136,16 @@ public:
     }
 
     intensity_t& at(size_t x, size_t y, size_t z = 0) {
-        assert(x < width_);
-        assert(y < height_);
-        assert(z < depth_);
+//        assert(x < width_);
+//        assert(y < height_);
+//        assert(z < depth_);
         return data_[z * width_ * height_ + y * width_ + x];
     }
 
     const intensity_t& at(size_t x, size_t y, size_t z = 0) const {
-        assert(x < width_);
-        assert(y < height_);
-        assert(z < depth_);
+//        assert(x < width_);
+//        assert(y < height_);
+//        assert(z < depth_);
         return data_[z * width_ * height_ + y * width_ + x];
     }
 
@@ -182,18 +184,25 @@ inline image<T> vec2image(const vec_t& vec, cnn_size_t block_size = 2, cnn_size_
 
     image<T> img;
     const cnn_size_t border_width = 1;
-    const auto cols = vec.size() >= (cnn_size_t)max_cols ? (cnn_size_t)max_cols : vec.size();
-    const auto rows = (vec.size() - 1) / cols + 1;
-    const auto pitch = block_size + border_width;
-    const auto width = pitch * cols + border_width;
-    const auto height = pitch * rows + border_width;
+    const unsigned int cols = vec.size() >= (cnn_size_t)max_cols ? (cnn_size_t)max_cols : vec.size();
+    const unsigned int rows = (vec.size() - 1) / cols + 1;
+    const int pitch = block_size + border_width;
+    const int width = pitch * cols + border_width;
+    const int height = pitch * rows + border_width;
     const typename image<T>::intensity_t bg_color = 255;
     cnn_size_t current_idx = 0;
 
     img.resize(width, height);
     img.fill(bg_color);
 
-    auto minmax = std::minmax_element(vec.begin(), vec.end());
+//    auto minmax = std::minmax_element(vec.begin(), vec.end());
+    float_t min = FLT_MAX;
+    float_t max = FLT_MIN;
+    for (int i = 0; i < vec.size(); i++ ) {
+    	min = min < vec[i] ? min : vec[i];
+    	max = max > vec[i] ? max : vec[i];
+    }
+    std::pair<float_t, float_t> minmax = std::make_pair(min, max);
 
     for (unsigned int r = 0; r < rows; r++) {
         cnn_size_t topy = pitch * r + border_width;
@@ -202,7 +211,7 @@ inline image<T> vec2image(const vec_t& vec, cnn_size_t block_size = 2, cnn_size_
             cnn_size_t leftx = pitch * c + border_width;
             const float_t src = vec[current_idx];
             image<>::intensity_t dst
-                = static_cast<typename image<T>::intensity_t>(rescale(src, *minmax.first, *minmax.second, 0, 255));
+                = static_cast<typename image<T>::intensity_t>(rescale(src, minmax.first, minmax.second, 0, 255));
 
             for (cnn_size_t y = 0; y < block_size; y++)
               for (cnn_size_t x = 0; x < block_size; x++)

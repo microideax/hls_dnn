@@ -28,7 +28,7 @@
 #if defined(CNN_USE_SSE) || defined(CNN_USE_AVX)
 #include <immintrin.h>
 #endif
-#include <cstdint>
+//#include <cstdint>
 #include <cassert>
 #include <numeric>
 
