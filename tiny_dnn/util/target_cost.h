@@ -1,5 +1,5 @@
 #pragma once
-#include "../util/util.h"
+#include "util.h"
 #include <numeric> // std::accumulate
 
 namespace tiny_dnn {

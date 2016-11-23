@@ -26,7 +26,7 @@
 */
 #pragma once
 #include "../util/util.h"
-#include <unordered_map>
+//#include <unordered_map>
 
 namespace tiny_dnn {
 
@@ -68,7 +68,7 @@ protected:
             E_[Index][&key].resize(key.size(), float_t());
         return E_[Index][&key];
     }
-    std::unordered_map<const vec_t*, vec_t> E_[N];
+    std::map<const vec_t*, vec_t> E_[N];
 };
 
 /**

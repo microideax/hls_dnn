@@ -54,7 +54,7 @@ public:
     }
 
 private:
-    typedef std::unordered_map<const node*, std::string> node2name_t;
+    typedef std::map<const node*, std::string> node2name_t;
 
     void generate_header(std::ostream& stream) {
         stream << "digraph \"" << name_ << "\" {" << std::endl;
@@ -71,7 +71,7 @@ private:
     }
 
     void get_layer_names(node2name_t& node2name) {
-        std::unordered_map<std::string, int> layer_counts; // [layer_type -> num]
+        std::map<std::string, int> layer_counts; // [layer_type -> num]
 
         auto namer = [&](const layer& l) {
             std::string ltype = l.layer_type();

@@ -163,7 +163,10 @@ class nodes {
         vec->reserve(num);
         for (cnn_size_t i = 0; i < num; i++) {
             assert(t[i] < outdim);
-            vec->emplace_back(outdim, target_value_min());
+            vec_t tmp(outdim, target_value_min());
+            tmp.push_back(target_value_min());
+            vec->push_back(tmp);
+//            vec->emplace_back(outdim, target_value_min());
             vec->back()[t[i]] = target_value_max();
         }
     }
@@ -350,7 +353,7 @@ class graph : public nodes {
                    const std::vector<layerptr_t>& output) {
         std::vector<layerptr_t> sorted;
         std::vector<nodeptr_t> input_nodes(input.begin(), input.end());
-        std::unordered_map<node*, std::vector<uint8_t>> removed_edge;
+        std::map<node*, std::vector<uint8_t>> removed_edge;
 
         // topological-sorting
         while (!input_nodes.empty()) {

@@ -64,6 +64,7 @@ class s_vector {
       for(int i = 0; i < cur; i++) {
         elems[i] = o[i];
       }
+      return *this;
     }
             
 };
