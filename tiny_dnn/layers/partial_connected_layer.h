@@ -71,9 +71,12 @@ public:
     }
 
     void connect_weight(cnn_size_t input_index, cnn_size_t output_index, cnn_size_t weight_index) {
-        weight2io_[weight_index].emplace_back(input_index, output_index);
-        out2wi_[output_index].emplace_back(weight_index, input_index);
-        in2wo_[input_index].emplace_back(weight_index, output_index);
+//        weight2io_[weight_index].emplace_back(input_index, output_index);
+        weight2io_[weight_index].push_back(std::make_pair(input_index, output_index));
+//        out2wi_[output_index].emplace_back(weight_index, input_index);
+        out2wi_[output_index].push_back(std::make_pair(weight_index, input_index));
+//        in2wo_[input_index].emplace_back(weight_index, output_index);
+        in2wo_[input_index].push_back(std::make_pair(weight_index, output_index));
     }
 
     void connect_bias(cnn_size_t bias_index, cnn_size_t output_index) {

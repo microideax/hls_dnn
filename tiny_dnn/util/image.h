@@ -107,7 +107,7 @@ public:
 
         // color palette (256*3byte)
         for (int i = 0; i < 256; i++) {
-            const auto v = static_cast<const char>(i);
+            const char v = static_cast<const char>(i);
             ofs.write(&v, 1);//R
             ofs.write(&v, 1);//G
             ofs.write(&v, 1);//B
@@ -245,27 +245,35 @@ inline image<T> vec2image(const vec_t& vec, const index3d<cnn_size_t>& maps) {
         throw nn_error("failed to visualize image: vector size invalid");
 
     const cnn_size_t border_width = 1;
-    const auto pitch = maps.width_ + border_width;
-    const auto width = maps.depth_ * pitch + border_width;
-    const auto height = maps.height_ + 2 * border_width;
+    const cnn_size_t pitch = maps.width_ + border_width;
+    const cnn_size_t width = maps.depth_ * pitch + border_width;
+    const cnn_size_t height = maps.height_ + 2 * border_width;
     const typename image<T>::intensity_t bg_color = 255;
     image<T> img;
 
     img.resize(width, height);
     img.fill(bg_color);
 
-    auto minmax = std::minmax_element(vec.begin(), vec.end());
+//    auto minmax = std::minmax_element(vec.begin(), vec.end());
+
+    float_t min = FLT_MAX;
+    float_t max = FLT_MIN;
+    for (int i = 0; i < vec.size(); i++ ) {
+    	min = min < vec[i] ? min : vec[i];
+    	max = max > vec[i] ? max : vec[i];
+    }
+    std::pair<float_t, float_t> minmax = std::make_pair(min, max);
 
     for (cnn_size_t c = 0; c < maps.depth_; ++c) {
-        const auto top = border_width;
-        const auto left = c * pitch + border_width;
+        const cnn_size_t top = border_width;
+        const cnn_size_t left = c * pitch + border_width;
 
         for (cnn_size_t y = 0; y < maps.height_; ++y) {
             for (cnn_size_t x = 0; x < maps.width_; ++x) {
                 const float_t val = vec[maps.get_index(x, y, c)];
 
                 img.at(left + x, top + y)
-                    = static_cast<typename image<T>::intensity_t>(rescale(val, *minmax.first, *minmax.second, 0, 255));
+                    = static_cast<typename image<T>::intensity_t>(rescale(val, minmax.first, minmax.second, 0, 255));
             }
         }
     }
