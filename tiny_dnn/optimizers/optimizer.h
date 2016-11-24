@@ -26,6 +26,7 @@
 */
 #pragma once
 #include "../util/util.h"
+#include <map>
 //#include <unordered_map>
 
 namespace tiny_dnn {
@@ -35,8 +36,8 @@ namespace tiny_dnn {
  * usesHessian : true if an optimizer uses hessian (2nd order derivative of loss function)
  **/
 struct optimizer {
-    optimizer() = default;
-    optimizer(const optimizer &) = default;
+    optimizer(){};
+    optimizer(const optimizer &){};
 #ifndef CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
     optimizer(optimizer &&) = default;
 #endif
@@ -54,10 +55,12 @@ struct optimizer {
 template <int N>
 struct stateful_optimizer : public optimizer {
     void reset() {//Yao: deleted override
-        for (auto& e : E_) e.clear();
-//        for (unsigned int i=0; i < E_.size(); i++){
-//        	E_[i].clear();
-//        }
+//        for (auto& e : E_) /* e.clear();*/
+    	for (int j=0; j < N; j++){
+//            for (int i=0; i < E_[j].size(); i++){
+        	    E_[j].clear();
+//            }
+    	}
     }
 
 protected:
