@@ -56,9 +56,9 @@ public:
 
     // move constructor
     quantized_fully_connected_layer(quantized_fully_connected_layer&& other)
-            : Base(std::move(other))
-            , params_(std::move(other.params_)) {
-        init_backend(std::move(Base::get_backend_type()));
+            : Base(move(other))
+            , params_(move(other.params_)) {
+        init_backend(move(Base::get_backend_type()));
     }
 
     size_t fan_in_size() const {//Yao: deleted override

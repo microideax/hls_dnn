@@ -13,7 +13,7 @@ template<class K, class V, size_t L>
 class static_unordered_map {
   class entry {
     public:
-      entry(K k, V v): key(k), value(v) {};
+//      entry(K k, V v): key(k), value(v) {};
       entry():valid(false) {};
 
     K key;

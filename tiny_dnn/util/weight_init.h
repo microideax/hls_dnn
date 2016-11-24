@@ -51,7 +51,7 @@ protected:
 
 void my_uniform_rand(vec_t& weight, float_t min, float_t max) {
   float_t range = (max - min);
-  for(int i = 0; i < weight.size(); i++) {
+  for(int i = 0; i < static_cast<int>(weight.size()); i++) {
     weight[i] = rand() / (float_t) RAND_MAX * range - range / 2;  
   }
 }

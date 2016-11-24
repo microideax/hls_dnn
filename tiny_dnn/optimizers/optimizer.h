@@ -87,10 +87,14 @@ struct adagrad : public stateful_optimizer<1> {
     void update(const vec_t& dW, vec_t &W) {
         vec_t& g = get<0>(W);
 
-        for_i(static_cast<int>(W.size()), [&](int i) {
-            g[i] += dW[i] * dW[i];
-            W[i] -= alpha * dW[i] / (sqrt(g[i]) + eps);
-        });
+//        for_i(static_cast<int>(W.size()), [&](int i) {
+//            g[i] += dW[i] * dW[i];
+//            W[i] -= alpha * dW[i] / (sqrt(g[i]) + eps);
+//        });
+        for (int j=0; j < static_cast<int>(W.size()); j++){
+        	g[j] += dW[j] * dW[j];
+        	W[j] -= alpha * dW[j] / (sqrt(g[j]) + eps);
+        }
     }
 
     float_t alpha; // learning rate
@@ -110,11 +114,15 @@ struct RMSprop : public stateful_optimizer<1> {
     void update(const vec_t& dW, vec_t& W) {
         vec_t& g = get<0>(W);
 
-        for_i(static_cast<int>(W.size()), [&](int i)
-        {
-            g[i] = mu * g[i] + (1 - mu) * dW[i] * dW[i];
-            W[i] -= alpha * dW[i] / sqrt(g[i] + eps);
-        });
+//        for_i(static_cast<int>(W.size()), [&](int i)
+//        {
+//            g[i] = mu * g[i] + (1 - mu) * dW[i] * dW[i];
+//            W[i] -= alpha * dW[i] / sqrt(g[i] + eps);
+//        });
+        for(int j=0; j < static_cast<int>(W.size()); j++){
+        	g[j] = mu * g[j] + (1 - mu) * dW[j] * dW[j];
+        	W[j] -= alpha * dW[j] / sqrt(g[j] + eps);
+        }
     }
 
     float_t alpha; // learning rate
@@ -139,12 +147,17 @@ struct adam : public stateful_optimizer<2> {
 
         b1_t*=b1;b2_t*=b2;
 
-        for_i(static_cast<int>(W.size()), [&](int i){
-            mt[i] = b1 * mt[i] + (float_t(1) - b1) * dW[i];
-            vt[i] = b2 * vt[i] + (float_t(1) - b2) * dW[i] * dW[i];
+        // for_i(static_cast<int>(W.size()), [&](int i){
+        //     mt[i] = b1 * mt[i] + (float_t(1) - b1) * dW[i];
+        //     vt[i] = b2 * vt[i] + (float_t(1) - b2) * dW[i] * dW[i];
 
-            W[i] -= alpha * ( mt[i]/(float_t(1) -b1_t) ) / sqrt( (vt[i]/(float_t(1)-b2_t)) + eps);
-        });
+        //     W[i] -= alpha * ( mt[i]/(float_t(1) -b1_t) ) / sqrt( (vt[i]/(float_t(1)-b2_t)) + eps);
+        // });
+        for(int j = 0; j < static_cast<int>(W.size()); j++){
+            mt[j] = b1 * mt[j] + (float_t(1) - b1) * dW[j];
+            vt[j] = b2 * vt[j] + (float_t(1) - b2) * dW[j] * dW[j];
+            W[j] -= alpha * ( mt[j]/(float_t(1) -b1_t) ) / sqrt( (vt[j]/(float_t(1)-b2_t)) + eps);            
+        }
     }
 
     float_t alpha; // learning rate
@@ -167,9 +180,12 @@ struct gradient_descent : public optimizer {
     gradient_descent() : alpha(float_t(0.01)), lambda(float_t(0)) {}
 
     void update(const vec_t& dW, vec_t& W) {
-        for_i(static_cast<int>(W.size()), [&](int i){
-            W[i] = W[i] - alpha * (dW[i] + lambda * W[i]);
-        });
+//        for_i(static_cast<int>(W.size()), [&](int i){
+//            W[i] = W[i] - alpha * (dW[i] + lambda * W[i]);
+//        });
+    	for (int j=0; j < static_cast<int>(W.size()); j++){
+    		W[j] = W[j] - alpha * (dW[j] + lambda * W[j]);
+    	}
     }
 
     float_t alpha; // learning rate
@@ -190,11 +206,16 @@ public:
     void update(const vec_t& dW, vec_t& W) {
         vec_t& dWprev = get<0>(W);
 
-        for_i(static_cast<int>(W.size()), [&](int i){
-            float_t V = mu * dWprev[i] - alpha * (dW[i] + W[i] * lambda);
-            W[i]      += V;
-            dWprev[i] =  V;
-        });
+//        for_i(static_cast<int>(W.size()), [&](int i){
+//            float_t V = mu * dWprev[i] - alpha * (dW[i] + W[i] * lambda);
+//            W[i]      += V;
+//            dWprev[i] =  V;
+//        });
+    	for (int j=0; j < static_cast<int>(W.size()); j++){
+    		float_t V = mu * dWprev[j] - alpha * (dW[j] + W[j] * lambda);
+    		W[j] += V;
+    		dWprev[j] =  V;
+    	}
     }
 
     float_t alpha; // learning rate
