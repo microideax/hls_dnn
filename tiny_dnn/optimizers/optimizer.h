@@ -38,13 +38,13 @@ namespace tiny_dnn {
 struct optimizer {
     optimizer(){};
     optimizer(const optimizer &){};
-#ifndef CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
-    optimizer(optimizer &&) = default;
-#endif
+//#ifndef CNN_DEFAULT_MOVE_CONSTRUCTOR_UNAVAILABLE
+//    optimizer(optimizer &&) = default;
+//#endif
     optimizer &operator =(const optimizer &) = default;
-#ifndef CNN_DEFAULT_ASSIGNMENT_OPERATOR_UNAVAILABLE
-    optimizer &operator =(optimizer &&) = default;
-#endif
+//#ifndef CNN_DEFAULT_ASSIGNMENT_OPERATOR_UNAVAILABLE
+//    optimizer &operator =(optimizer &&) = default;
+//#endif
 //    virtual ~optimizer() = default;
     virtual ~optimizer(); //Yao: deleted default
     virtual void update(const vec_t& dW, vec_t &W) = 0;
