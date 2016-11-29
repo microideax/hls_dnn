@@ -49,14 +49,15 @@ class layer;
 class edge;
 
 typedef node* nodeptr_t;
-typedef std::shared_ptr<edge> edgeptr_t;
-//typedef edge* edgeptr_t;
+//typedef std::shared_ptr<edge> edgeptr_t;
+typedef edge* edgeptr_t;
 typedef layer* layerptr_t;
 
 /**
  * base class of all kind of tinny-cnn data
  **/
-class node : public std::enable_shared_from_this<node> {
+//class node : public std::enable_shared_from_this<node> {
+class node {
 public:
     node(cnn_size_t in_size, cnn_size_t out_size)
         : prev_(in_size), next_(out_size) {}
@@ -67,13 +68,13 @@ public:
 
     cnn_size_t prev_port(const edge& e) const {
         auto it = std::find_if(prev_.begin(), prev_.end(),
-                               [&](edgeptr_t ep) { return ep.get() == &e; });
+                               [&](edgeptr_t ep) { return ep == &e; });
         return (cnn_size_t)std::distance(prev_.begin(), it);
     }
 
     cnn_size_t next_port(const edge& e) const {
         auto it = std::find_if(next_.begin(), next_.end(),
-                               [&](edgeptr_t ep) { return ep.get() == &e; });
+                               [&](edgeptr_t ep) { return ep == &e; });
         return (cnn_size_t)std::distance(next_.begin(), it);
     }
 
@@ -152,19 +153,29 @@ class edge {
 
 inline std::vector<node*> node::prev_nodes() const {
     std::set<node*> sets;
-    for (auto& e : prev_) {
-        if (e && e->prev()) sets.insert(e->prev());
+//    for (auto& e : prev_) {
+//        if (e && e->prev()) sets.insert(e->prev());
+//    }
+    for (unsigned int i = 0; i < prev_.size(); i++){
+    	if ( prev_[i] && prev_[i]->prev())
+    		sets.insert(prev_[i]->prev());
     }
     return std::vector<node*>(sets.begin(), sets.end());
 }
 
 inline std::vector<node*> node::next_nodes() const {
     std::set<node*> sets;
-    for (auto& e : next_) {
-        if (e) {
-            auto n = e->next();
-            sets.insert(n.begin(), n.end());
-        }
+//    for (auto& e : next_) {
+//        if (e) {
+//            auto n = e->next();
+//            sets.insert(n.begin(), n.end());
+//        }
+//    }
+    for (unsigned int i = 0; i < next_.size(); i++){
+    	if (next_[i]){
+    		std::vector<node*> n = next_[i]->next();
+    		sets.insert(n.begin(), n.end());
+    	}
     }
     return std::vector<node*>(sets.begin(), sets.end());
 }

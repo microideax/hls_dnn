@@ -99,7 +99,7 @@ class layer : public node {
         parallelize_ = parallelize;
     }
 
-    void set_backend(std::shared_ptr<core::backend> backend) {
+    void set_backend(core::backend* backend) {
         backend_ = backend;
     }
 
@@ -141,7 +141,7 @@ class layer : public node {
         return device_ptr_;
     }
 
-    std::shared_ptr<core::backend> backend() { return backend_; }
+    core::backend* backend() { return backend_; }
 
     ///< number of incoming edges in this layer
     cnn_size_t in_channels() const { return in_channels_; }
@@ -481,8 +481,8 @@ class layer : public node {
 
         for (size_t i = 0; i < out_channels_; i++) {
             if (!next_[i]) {
-                next_[i] = std::make_shared<edge>(
-                    this, out_shape()[i], out_type_[i]);
+//                next_[i] = std::make_shared<edge>(this, out_shape()[i], out_type_[i]);
+                next_[i] = new edge(this, out_shape()[i], out_type_[i]);
             }
         }
 
@@ -534,8 +534,8 @@ class layer : public node {
     }
 
     bool has_same_weights(const layer& rhs, float_t eps) const {
-        auto w1 = weights();
-        auto w2 = rhs.weights();
+    	std::vector<const vec_t*> w1 = weights();
+    	std::vector<const vec_t*> w2 = rhs.weights();
         if (w1.size() != w2.size()) return false;
 
         for (size_t i = 0; i < w1.size(); i++) {
@@ -579,7 +579,7 @@ class layer : public node {
     std::vector<int32_t> out_type_;
     
     core::backend_t backend_type_;
-    std::shared_ptr<core::backend> backend_;
+    core::backend* backend_;
 
 //    Device* device_ptr_ = nullptr;
     Device* device_ptr_;
@@ -591,14 +591,13 @@ class layer : public node {
     void alloc_input(cnn_size_t i) const {
         // TODO(nyanp): refactoring
         // which type of refactoring do you have in mind for that?
-        prev_[i] = std::make_shared<edge>(nullptr, in_shape()[i], in_type_[i]);
+        prev_[i] = new edge(nullptr, in_shape()[i], in_type_[i]);
     }
 
     void alloc_output(cnn_size_t i) const {
         // TODO(nyanp): refactoring
         // which type of refactoring do you have in mind for that?
-        next_[i] = std::make_shared<edge>((layer*)this,
-            out_shape()[i], out_type_[i]);
+        next_[i] = new edge((layer*)this, out_shape()[i], out_type_[i]);
     }
 
     edgeptr_t ith_in_node(cnn_size_t i) {
