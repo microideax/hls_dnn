@@ -92,7 +92,7 @@ public:
     std::vector<node*> prev_nodes() const; // @todo refactor and remove this method
     std::vector<node*> next_nodes() const; // @todo refactor and remove this method
  protected:
-    node() = delete;
+//    node() = delete;
 
     friend void connect(layerptr_t head, layerptr_t tail,
                         cnn_size_t head_index, cnn_size_t tail_index);
@@ -109,9 +109,14 @@ class edge {
     edge(node* prev, const shape3d& shape, int32_t vtype)
         : shape_(shape),
           vtype_(vtype),
-          data_({vec_t(shape.size())}),
-          grad_({vec_t(shape.size())}),
-          prev_(prev) {}
+//          data_({vec_t(shape.size())}),
+//          grad_({vec_t(shape.size())}),
+          prev_(prev) {
+    	tensor_t t;
+    	t.push_back(vec_t(shape.size()));
+    	data_ = t;
+    	grad_ = t;
+    }
 
     void merge_grads(vec_t *dst) {
         dst->resize(grad_[0].size());
@@ -204,16 +209,19 @@ node_tuple<T*> operator , (T& l1, T& l2) {
     return node_tuple<T*>(&l1, &l2);
 }
 
-template <typename T>
-node_tuple<std::shared_ptr<T>> operator , (std::shared_ptr<T> l1, std::shared_ptr<T> l2) {
-    return node_tuple<std::shared_ptr<T>>(l1, l2);
-}
+//template <typename T>
+//node_tuple<std::shared_ptr<T>> operator , (std::shared_ptr<T> l1, std::shared_ptr<T> l2) {
+//    return node_tuple<std::shared_ptr<T>>(l1, l2);
+//}
 
 template <typename T>
-node_tuple<std::shared_ptr<T>> operator , (node_tuple<std::shared_ptr<T>> lhs, std::shared_ptr<T>& rhs) {
-    lhs.nodes_.push_back(rhs);
-    return lhs;
+node_tuple<T*> operator , (node_tuple<T*> lhs, T*& rhs) {
+	lhs.nodes_.push_back(rhs);
 }
+//node_tuple<std::shared_ptr<T>> operator , (node_tuple<std::shared_ptr<T>> lhs, std::shared_ptr<T>& rhs) {
+//    lhs.nodes_.push_back(rhs);
+//    return lhs;
+//}
 
 template <typename T>
 node_tuple<T*> operator , (node_tuple<T*> lhs, T& rhs) {
@@ -221,12 +229,12 @@ node_tuple<T*> operator , (node_tuple<T*> lhs, T& rhs) {
     return lhs;
 }
 
-template <typename T, typename U>
-inline std::shared_ptr<U>& operator << (std::shared_ptr<T>& lhs,
-                                        std::shared_ptr<U>& rhs) {
-    connect(lhs.get(), rhs.get());
-    return rhs;
-}
+//template <typename T, typename U>
+//inline std::shared_ptr<U>& operator << (std::shared_ptr<T>& lhs,
+//                                        std::shared_ptr<U>& rhs) {
+//    connect(lhs.get(), rhs.get());
+//    return rhs;
+//}
 
 template <typename T, typename U>
 inline U& operator << (const node_tuple<T>& lhs, U& rhs) {

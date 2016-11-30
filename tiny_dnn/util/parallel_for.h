@@ -187,7 +187,7 @@ void for_i(bool parallelize, T size, Func f, int grainsize = 100)
     // blocked_range r(0, size);
     // for_(parallelize, 0, size, &func_s(f, r), grainsize);
     //  for_(parallelize, 0, size, f_t(f, r), grainsize);
-    for( int i = 0 ; i < size; i++) {
+    for( unsigned int i = 0 ; i < size; i++) {
         f(i);
     }
 }
