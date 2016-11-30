@@ -67,15 +67,26 @@ public:
     const std::vector<edgeptr_t>& next() const { return next_; }
 
     cnn_size_t prev_port(const edge& e) const {
-        auto it = std::find_if(prev_.begin(), prev_.end(),
-                               [&](edgeptr_t ep) { return ep == &e; });
-        return (cnn_size_t)std::distance(prev_.begin(), it);
+//        auto it = std::find_if(prev_.begin(), prev_.end(),
+//                               [&](edgeptr_t ep) { return ep == &e; });
+//        edgeptr_t it;
+//        return (cnn_size_t)std::distance(prev_.begin(), it);
+        cnn_size_t distance = 1;
+        for (unsigned int i = 0; i < prev_.size(); i++) {
+        	if (&e == prev_[i]) distance = i + 1;
+        }
+        return distance;
     }
 
     cnn_size_t next_port(const edge& e) const {
-        auto it = std::find_if(next_.begin(), next_.end(),
-                               [&](edgeptr_t ep) { return ep == &e; });
-        return (cnn_size_t)std::distance(next_.begin(), it);
+//        auto it = std::find_if(next_.begin(), next_.end(),
+//                               [&](edgeptr_t ep) { return ep == &e; });
+//        return (cnn_size_t)std::distance(next_.begin(), it);
+    	cnn_size_t distance = 1;
+    	for (unsigned int i = 0; i < next_.size(); i++) {
+    		if (&e == next_[i]) distance = i + 1;
+    	}
+    	return distance;
     }
 
     std::vector<node*> prev_nodes() const; // @todo refactor and remove this method
