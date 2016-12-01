@@ -41,11 +41,11 @@ enum backend_t { tiny_dnn, nnpack, libdnn, avx, opencl };
 
 inline std::ostream& operator << (std::ostream& os, backend_t type) {
     switch (type) {
-        case backend_t::tiny_dnn: os << "TinyDNN"; break;
-        case backend_t::nnpack:   os << "NNPACK";  break;
-        case backend_t::libdnn:   os << "LibDNN";  break;
-        case backend_t::avx:      os << "AVX";     break;
-        case backend_t::opencl:   os << "OpenCL";  break;
+        case tiny_dnn: os << "TinyDNN"; break;
+        case nnpack:   os << "NNPACK";  break;
+        case libdnn:   os << "LibDNN";  break;
+        case avx:      os << "AVX";     break;
+        case opencl:   os << "OpenCL";  break;
         default:
             throw nn_error("Not supported ostream enum.");
             break;

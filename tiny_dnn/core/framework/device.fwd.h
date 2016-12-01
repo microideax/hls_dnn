@@ -53,15 +53,14 @@
 #endif
 #endif
 */
+enum device_t { CPU, GPU /*, FPGA */ };
 
 namespace tiny_dnn {
 
-enum class device_t { CPU, GPU /*, FPGA */ };
-
 inline std::ostream& operator << (std::ostream& os, device_t type) {
     switch (type) {
-        case device_t::CPU: os << "CPU"; break;
-        case device_t::GPU: os << "GPU"; break;
+        case CPU: os << "CPU"; break;
+        case GPU: os << "GPU"; break;
         default:
             throw nn_error("Not supported ostream enum: " +
                     to_string(static_cast<int>(type)));

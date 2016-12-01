@@ -47,12 +47,14 @@
 #include "../../core/framework/device.fwd.h"
 #include "../../core/framework/program_manager.h"
 
+using namespace tiny_dnn::core;
+
 namespace tiny_dnn {
  
 Device::Device(device_t type)
         : type_(type), has_clcuda_api_(false) {
     nn_info("Initializing Non-OpenCL device ...");
-    if (type == device_t::GPU) {
+    if (type == GPU) {
         throw nn_error("Bad GPU device initialization. "
                        "Please provide platform_id and device_id");
     }
@@ -117,8 +119,8 @@ void Device::registerOp(layer& l) {
             ". Device has disabled OpenCL support.");
     }
 
-    if (l.engine() != core::backend_t::opencl &&
-        l.engine() != core::backend_t::libdnn) {
+    if (l.engine() != backend_t::opencl &&
+        l.engine() != backend_t::libdnn) {
         throw nn_error("Cannot register layer: " + l.layer_type() +
             ". Enabled engine: " + to_string(l.engine()));
     }
