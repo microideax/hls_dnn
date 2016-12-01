@@ -108,7 +108,7 @@ public:
         float_t denom = float_t(0);
         // for (auto x : v)
         //     denom += std::exp(x - alpha);
-        for (int i=0; i < v.size(); i++){
+        for (unsigned int i=0; i < v.size(); i++){
             denom += exp(v[i] - alpha);
         }
         return numer / denom;

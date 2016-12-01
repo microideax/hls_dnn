@@ -31,9 +31,9 @@
 namespace tiny_dnn {
 namespace core {
 
-enum class padding {
+enum padding {
     valid,  ///< use valid pixels of input
-    same    ///< add zero-padding around input so as to keep image size
+    same  ///< add zero-padding around input so as to keep image size
 };
 
 struct conv_layer_worker_specific_storage {
