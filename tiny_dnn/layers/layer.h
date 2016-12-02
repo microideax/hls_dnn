@@ -86,6 +86,7 @@ class layer : public node {
               in_type_(in_type),
               out_type_(out_type) {
 //        weight_init_ = std::make_shared<weight_init::xavier>();
+//        bias_init_ = std::make_shared<weight__init::constant>();
     	weight_init_ = &static_xavier;
         bias_init_ = &static_constant;
     }
@@ -338,7 +339,7 @@ class layer : public node {
     }
 
     template <typename BiasInit>
-    layer& bias_init(std::shared_ptr<BiasInit> f) {
+    layer& bias_init(BiasInit* f) {
         bias_init_ = f;
         return *this;
     }
