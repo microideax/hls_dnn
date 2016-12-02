@@ -154,9 +154,18 @@ class layer : public node {
     cnn_size_t out_channels() const { return out_channels_; }
 
     cnn_size_t in_data_size() const {
-        return sumif(in_shape(), [&](cnn_size_t i) { // NOLINT
-            return in_type_[i] == vector_type::data; }, [](const shape3d& s) {
-                return s.size(); });
+//        return sumif(in_shape(), [&](cnn_size_t i) { // NOLINT
+//            return in_type_[i] == vector_type::data; },
+//            [](const shape3d& s) {
+//                return s.size(); });
+//        bool return_value;
+        cnn_size_t ret = 0;
+        for(unsigned int i = 0; i < in_shape().size(); i++) {
+        	if(in_type_[i] == vector_type::data) {
+        		ret += in_shape()[i].size();
+        	}
+        }
+        return ret;
     }
 
     cnn_size_t out_data_size() const {
@@ -322,13 +331,15 @@ class layer : public node {
     // setter
     template <typename WeightInit>
     layer& weight_init(const WeightInit& f) {
-        weight_init_ = std::make_shared<WeightInit>(f);
+//        weight_init_ = std::make_shared<WeightInit>(f);
+        weight_init_ = &f;
         return *this;
     }
 
     template <typename BiasInit>
     layer& bias_init(const BiasInit& f) {
-        bias_init_ = std::make_shared<BiasInit>(f);
+//        bias_init_ = std::make_shared<BiasInit>(f);
+    	bias_init_ = &f;
         return *this;
     }
 
@@ -351,24 +362,39 @@ class layer : public node {
         /*if (is_exploded()) {
             throw nn_error("failed to save weights because of infinite weight");
         }*/
-        auto all_weights = weights();
-        for (auto& weight : all_weights) {
-            for (auto w : *weight) os << w <<  " ";
+    	std::vector<const vec_t*> all_weights = weights();
+//        for (auto& weight : all_weights) {
+//            for (auto w : *weight) os << w <<  " ";
+//        }
+        for (unsigned int i = 0; i < all_weights.size(); i++){
+        	for (unsigned int j =0; j < (*all_weights[i]).size(); j++){
+        		os << (*all_weights[i])[j] << "";
+        	}
         }
     }
 
     virtual void load(std::istream& is) { // NOLINT
-        auto all_weights = weights();
-        for (auto& weight : all_weights) {
-            for (auto& w : *weight) is >> w;
+    	std::vector<vec_t*> all_weights = weights();
+//        for (auto& weight : all_weights) {
+//            for (auto& w : *weight) is >> w;
+//        }
+        for (unsigned int i = 0; i < all_weights.size(); i++){
+        	for (unsigned int j =0; j < (*all_weights[i]).size(); j++){
+        		is >> (*all_weights[i])[j];
+        	}
         }
         initialized_ = true;
     }
 
     virtual void load(const std::vector<float_t>& src, int& idx) { // NOLINT
-        auto all_weights = weights();
-        for (auto& weight : all_weights) {
-            for (auto& w : *weight) w = src[idx++];
+    	std::vector<vec_t*> all_weights = weights();
+//        for (auto& weight : all_weights) {
+//            for (auto& w : *weight) w = src[idx++];
+//        }
+        for (unsigned int i = 0; i < all_weights.size(); i++){
+        	for (unsigned int j =0; j < (*all_weights[i]).size(); j++){
+        		(*all_weights[i])[j] = src[idx++];
+        	}
         }
         initialized_ = true;
     }
@@ -546,7 +572,7 @@ class layer : public node {
             if (w1[i]->size() != w2[i]->size()) return false;
 
             for (size_t j = 0; j < w1[i]->size(); j++) {
-                if (std::abs(w1[i]->at(j) - w2[i]->at(j)) > eps) return false;
+                if (abs(w1[i]->at(j) - w2[i]->at(j)) > eps) return false;
             }
         }
         return true;
