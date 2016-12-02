@@ -169,9 +169,16 @@ class layer : public node {
     }
 
     cnn_size_t out_data_size() const {
-        return sumif(out_shape(), [&](cnn_size_t i) { // NOLINT
-            return out_type_[i] == vector_type::data; }, [](const shape3d& s) {
-                return s.size(); });
+//        return sumif(out_shape(), [&](cnn_size_t i) { // NOLINT
+//            return out_type_[i] == vector_type::data; }, [](const shape3d& s) {
+//                return s.size(); });
+    	cnn_size_t ret;
+        for(unsigned int i = 0; i < out_shape().size(); i++) {
+        	if(out_type_[i] == vector_type::data) {
+        		ret += out_shape()[i].size();
+        	}
+        }
+        return ret;
     }
 
     std::vector<shape3d> in_data_shape() {
