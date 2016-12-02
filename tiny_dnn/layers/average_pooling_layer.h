@@ -60,7 +60,7 @@ void tiny_average_pooling_kernel(bool parallelize,
             float_t weight = W[d] * scale_factor;
             float_t bias = b[d];
             for (size_t i = 0; i < oarea; ++i, ++idx) {
-                const std::vector<std::pair<cnn_size_t, cnn_size_t>>& connections = out2wi[idx];
+                const std::vector<std::pair<cnn_size_t, cnn_size_t> >& connections = out2wi[idx];
                 float_t value = float_t(0);
                 // for (auto connection : connections)// 13.1%
                 //     value += in[connection.second]; // 3.2%

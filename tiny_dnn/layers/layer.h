@@ -68,6 +68,8 @@ class layer : public node {
                                     const layer& to);
 
     virtual ~layer() {}//Yao: changed default
+    static weight_init::xavier static_xavier;
+    static weight_init::constant static_constant;
 
     /**
      * construct N-input, M-output layer
@@ -83,8 +85,9 @@ class layer : public node {
               out_channels_(out_type.size()),
               in_type_(in_type),
               out_type_(out_type) {
-        weight_init_ = std::make_shared<weight_init::xavier>();
-        bias_init_ = std::make_shared<weight_init::constant>();
+//        weight_init_ = std::make_shared<weight_init::xavier>();
+    	weight_init_ = &static_xavier;
+        bias_init_ = &static_constant;
     }
 
     layer(const layer&) = default;
@@ -329,7 +332,7 @@ class layer : public node {
     }
 
     template <typename WeightInit>
-    layer& weight_init(std::shared_ptr<WeightInit> f) {
+    layer& weight_init(WeightInit* f) {
         weight_init_ = f;
         return *this;
     }
@@ -585,8 +588,8 @@ class layer : public node {
     Device* device_ptr_;
 
  private:
-    std::shared_ptr<weight_init::function> weight_init_;
-    std::shared_ptr<weight_init::function> bias_init_;
+    weight_init::function* weight_init_;
+    weight_init::function* bias_init_;
 
     void alloc_input(cnn_size_t i) const {
         // TODO(nyanp): refactoring
@@ -620,6 +623,9 @@ class layer : public node {
         return &(*(const_cast<layerptr_t>(this)->ith_in_node(i)->get_data()))[0];
     }
 };
+
+weight_init::xavier layer::static_xavier;
+weight_init::constant layer::static_constant;
 
 inline void connect(layerptr_t head,
                     layerptr_t tail,
