@@ -172,7 +172,7 @@ class layer : public node {
 //        return sumif(out_shape(), [&](cnn_size_t i) { // NOLINT
 //            return out_type_[i] == vector_type::data; }, [](const shape3d& s) {
 //                return s.size(); });
-    	cnn_size_t ret;
+    	cnn_size_t ret = 0;
         for(unsigned int i = 0; i < out_shape().size(); i++) {
         	if(out_type_[i] == vector_type::data) {
         		ret += out_shape()[i].size();
@@ -182,15 +182,28 @@ class layer : public node {
     }
 
     std::vector<shape3d> in_data_shape() {
-        return filter(in_shape(), [&](size_t i) { // NOLINT
-            return in_type_[i] == vector_type::data;
-        });
+//        return filter(in_shape(), [&](size_t i) { // NOLINT
+//            return in_type_[i] == vector_type::data;
+//        });
+
+        std::vector<shape3d> res;
+        for (unsigned int i = 0; i < in_shape().size(); i++) {
+            if (in_type_[i] == vector_type::data)
+            	res.push_back(in_shape()[i]);
+        }
+        return res;
     }
 
     std::vector<shape3d> out_data_shape() {
-        return filter(out_shape(), [&](size_t i) { // NOLINT
-            return out_type_[i] == vector_type::data;
-        });
+//        return filter(out_shape(), [&](size_t i) { // NOLINT
+//            return out_type_[i] == vector_type::data;
+//        });
+        std::vector<shape3d> res;
+        for (unsigned int i = 0; i < out_shape().size(); i++) {
+            if (out_type_[i] == vector_type::data)
+            	res.push_back(out_shape()[i]);
+        }
+        return res;
     }
 
     ///! @deprecated use in_data_size() instead
@@ -298,7 +311,9 @@ class layer : public node {
      * override properly if the layer is intended to be used as output layer
      **/
     virtual std::pair<float_t, float_t> out_value_range() const {
-        return { float_t(0.0), float_t(1.0) };
+//        return { float_t(0.0), float_t(1.0) };
+    	std::pair<float_t, float_t> p(0.0, 1.0);
+    	return p;
     }
 
     /**
@@ -466,9 +481,15 @@ class layer : public node {
         setup(false);
         set_out_grads(out_grads);
         backward();
-        return map_<tensor_t>(inputs(), [](edgeptr_t e) {
-            return *e->get_gradient();
-        });
+//        return map_<tensor_t>(inputs(), [](edgeptr_t e) {
+//            return *e->get_gradient();
+//        });
+
+        std::vector<tensor_t> res;
+        for (unsigned int i = 0; i < inputs().size(); i++){
+        	res.push_back(*inputs()[i]->get_gradient());
+        }
+        return res;
     }
 
     void forward() {
@@ -560,9 +581,12 @@ class layer : public node {
                 vec_t& target = *get_weight_data(i);
 
                 ith_in_node(i)->merge_grads(&diff);
-                std::transform(diff.begin(), diff.end(),
-                               diff.begin(), [&](float_t x) { // NOLINT
-                                  return x * rcp_batch_size; });
+//                std::transform(diff.begin(), diff.end(),
+//                               diff.begin(), [&](float_t x) { // NOLINT
+//                                  return x * rcp_batch_size; });
+                for (unsigned int i = 0; i < diff.size(); i++){
+                	diff[i] = diff[i] * rcp_batch_size;
+                }
                 o->update(diff, target);
             }
         }
@@ -585,27 +609,32 @@ class layer : public node {
         return true;
     }
 
+    void resize_tensor(cnn_size_t sample_count, tensor_t* tensor){
+    	tensor->resize(sample_count, (*tensor)[0]);
+    }
+
     virtual void set_sample_count(cnn_size_t sample_count) {
 
         // increase the size if necessary - but do not decrease
-        auto resize = [sample_count](tensor_t* tensor) {
-            tensor->resize(sample_count, (*tensor)[0]);
-        };
+//        auto resize = [sample_count](tensor_t* tensor) {
+//            tensor->resize(sample_count, (*tensor)[0]);
+//        };
 
         for (cnn_size_t i = 0; i < in_channels_; i++) {
             if (!is_trainable_weight(in_type_[i])) {
-                resize(ith_in_node(i)->get_data());
+                resize_tensor(sample_count, ith_in_node(i)->get_data());
             }
-            resize(ith_in_node(i)->get_gradient());
+            resize_tensor(sample_count, ith_in_node(i)->get_gradient());
         }
 
         for (cnn_size_t i = 0; i < out_channels_; i++) {
             if (!is_trainable_weight(out_type_[i])) {
-                resize(ith_out_node(i)->get_data());
+                resize_tensor(sample_count, ith_out_node(i)->get_data());
             }
-            resize(ith_out_node(i)->get_gradient());
+            resize_tensor(sample_count, ith_out_node(i)->get_gradient());
         }
     }
+//    (ith_in_node(i)->get_data())->resize(sample_count, (*ith_in_node(i)->get_data())[0]);
 
  protected:
     bool initialized_;
@@ -628,7 +657,7 @@ class layer : public node {
     void alloc_input(cnn_size_t i) const {
         // TODO(nyanp): refactoring
         // which type of refactoring do you have in mind for that?
-        prev_[i] = new edge(nullptr, in_shape()[i], in_type_[i]);
+        prev_[i] = new edge(0, in_shape()[i], in_type_[i]);
     }
 
     void alloc_output(cnn_size_t i) const {
@@ -665,8 +694,8 @@ inline void connect(layerptr_t head,
                     layerptr_t tail,
                     cnn_size_t head_index = 0,
                     cnn_size_t tail_index = 0) {
-    auto out_shape = head->out_shape()[head_index];
-    auto in_shape = tail->in_shape()[tail_index];
+	shape3d out_shape = head->out_shape()[head_index];
+    shape3d in_shape = tail->in_shape()[tail_index];
 
     head->setup(false);
 
@@ -761,6 +790,7 @@ void graph_traverse(layer *root_node, T&& node_callback, U&& edge_callback) {
 //    std::unordered_set<layer*> visited;
 	static_unordered_set<layer*, 1000> visited;
 	std::queue<layer*> S;
+	edgeptr_t null_ptr = NULL;
 
     S.push(root_node);
 
@@ -771,28 +801,34 @@ void graph_traverse(layer *root_node, T&& node_callback, U&& edge_callback) {
 
         node_callback(*curr);
 
-        auto edges = curr->next();
-        for (auto e : edges) {
-            if (e != nullptr)
-                edge_callback(*e);
+        std::vector<edgeptr_t> edges = curr->next();
+//        for (auto e : edges) {
+//            if (e != nullptr)
+//                edge_callback(*e);
+//        }
+        for (unsigned int i = 0; i < edges.size(); i++){
+        	if ( edges[i] != null_ptr)
+        		edge_callback(*edges[i]);
         }
 
-        auto prev = curr->prev_nodes();
-        for (auto p : prev) {
+        std::vector<node*> prev = curr->prev_nodes();
+//        for (auto p : prev) {
+        for ( unsigned int i = 0; i < prev.size(); i++){
             // TODO(nyanp): refactoring
             // which type of refactoring do you have in mind for that?
-            layer* l = dynamic_cast<layer*>(p);
+            layer* l = dynamic_cast<layer*>(prev[i]);
 //            if (visited.find(l) == visited.end()) {
             if (visited.contains(l)) {
             	S.push(l);
             }
         }
 
-        auto next = curr->next_nodes();
-        for (auto n : next) {
+        std::vector<node*> next = curr->next_nodes();
+//        for (auto n : next) {
+        for ( unsigned int i = 0; i < next.size(); i++){
             // TODO(nyanp): refactoring
             // which type of refactoring do you have in mind for that?
-            layer* l = dynamic_cast<layer*>(n);
+            layer* l = dynamic_cast<layer*>(next[i]);
 //            if (visited.find(l) == visited.end()) {
             if (visited.contains(l)) {
                 S.push(l);

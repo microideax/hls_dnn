@@ -62,7 +62,7 @@ public:
         float_t d = float_t(0);
 
         for(cnn_size_t i = 0; i < y.size(); ++i)
-            d += std::abs(y[i] - t[i]);
+            d += abs(y[i] - t[i]);
 
         return d/y.size();
     }
@@ -97,7 +97,7 @@ public:
         const float_t eps = float_t(1) / fraction;
 
         for(cnn_size_t i = 0; i < y.size(); ++i) {
-            float_t diff = std::abs(y[i] - t[i]);
+            float_t diff = abs(y[i] - t[i]);
             if(diff > eps)
                 d += diff;
         }
@@ -131,7 +131,7 @@ public:
         float_t d = float_t(0);
 
         for(cnn_size_t i = 0; i < y.size(); ++i)
-            d += -t[i] * std::log(y[i]) - (float_t(1) - t[i]) * std::log(float_t(1) - y[i]);
+            d += -t[i] * log(y[i]) - (float_t(1) - t[i]) * log(float_t(1) - y[i]);
 
         return d;
     }
@@ -155,7 +155,7 @@ public:
         float_t d = 0.0;
 
         for(cnn_size_t i = 0; i < y.size(); ++i)
-            d += -t[i] * std::log(y[i]);
+            d += -t[i] * log(y[i]);
 
         return d;
     }

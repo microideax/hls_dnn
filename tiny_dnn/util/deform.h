@@ -32,7 +32,7 @@ using namespace tiny_dnn::weight_init;
 
 namespace tiny_dnn {
 
-inline vec_t corrupt(vec_t&& in, float_t corruption_level, float_t min_value) {
+inline vec_t corrupt(vec_t& in, float_t corruption_level, float_t min_value) {
     for (size_t i = 0; i < in.size(); i++)
         if (my_bernoulli(corruption_level))
         // if(rand() < RAND_MAX * corruption_level)
