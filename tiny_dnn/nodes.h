@@ -81,8 +81,11 @@ class nodes {
      **/
     virtual
     void update_weights(optimizer *opt, int batch_size) {
-        for (auto l : nodes_) {
-            l->update_weight(opt, batch_size);
+//        for (auto l : nodes_) {
+//            l->update_weight(opt, batch_size);
+//        }
+        for ( unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->update_weight(opt, batch_size);
         }
     }
 
@@ -90,14 +93,20 @@ class nodes {
      * setup all weights, must be called before forward/backward
      **/
     virtual void setup(bool reset_weight) {
-        for (auto l : nodes_) {
-            l->setup(reset_weight);
+//        for (auto l : nodes_) {
+//            l->setup(reset_weight);
+//        }
+        for (unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->setup(reset_weight);
         }
     }
 
     void clear_grads() {
-        for (auto l : nodes_) {
-            l->clear_grads();
+//        for (auto l : nodes_) {
+//            l->clear_grads();
+//        }
+        for (unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->clear_grads();
         }
     }
 
@@ -137,23 +146,32 @@ class nodes {
     }
 
     virtual void save(std::ostream& os) const { // NOLINT
-        for (auto& l : nodes_) {
-            l->save(os);
+//        for (auto& l : nodes_) {
+//            l->save(os);
+//        }
+        for ( unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->save(os);
         }
     }
 
     virtual void load(std::istream& is) { // NOLINT
         setup(false);
-        for (auto& l : nodes_) {
-            l->load(is);
+//        for (auto& l : nodes_) {
+//            l->load(is);
+//        }
+        for (unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->load(is);
         }
     }
 
     virtual void load(const std::vector<float_t>& vec) {
         int idx = 0;
         setup(false);
-        for (auto& l : nodes_) {
-            l->load(vec, idx);
+        // for (auto& l : nodes_) {
+        //     l->load(vec, idx);
+        // }
+        for (unsigned int i = 0; i < nodes_.size(); i++){
+        	nodes_[i]->load(vec, idx);
         }
     }
 
@@ -323,7 +341,7 @@ class graph : public nodes {
             output_layers_[i]->set_out_grads({ reordered_grad[i] });
         }
 
-        for (auto l = nodes_.rbegin(); l != nodes_.rend(); l++) {
+        for (std::vector<layerptr_t>::reverse_iterator l = nodes_.rbegin(); l != nodes_.rend(); l++) {
             (*l)->backward();
         }
     }
@@ -343,8 +361,11 @@ class graph : public nodes {
             input_layers_[channel_index]->set_in_data({ reordered_data[channel_index] });
         }
 
-        for (auto l : nodes_) {
-            l->forward();
+//        for (auto l : nodes_) {
+//            l->forward();
+//        }
+        for (unsigned int l = 0; l < nodes_.size(); l++){
+        	nodes_[l]->forward();
         }
         return merge_outs();
     }
@@ -353,7 +374,7 @@ class graph : public nodes {
                    const std::vector<layerptr_t>& output) {
         std::vector<layerptr_t> sorted;
         std::vector<nodeptr_t> input_nodes(input.begin(), input.end());
-        std::map<node*, std::vector<uint8_t>> removed_edge;
+        std::map<node*, std::vector<uint8_t> > removed_edge;
 
         // topological-sorting
         while (!input_nodes.empty()) {
@@ -374,15 +395,22 @@ class graph : public nodes {
                 std::vector<uint8_t>& removed = removed_edge[next[i]];
                 removed[find_index(next[i]->prev_nodes(), curr)] = 1;
 
-                if (std::all_of(removed.begin(), removed.end(), [](uint8_t x) {
-                        return x == 1; })) {
-                    input_nodes.push_back(next[i]);
+//                if (std::all_of(removed.begin(), removed.end(), [](uint8_t x) {
+//                        return x == 1; })) {
+//                    input_nodes.push_back(next[i]);
+//                }
+                for (unsigned int x = 0; x < removed.size(); x++){
+                	if (removed[x] == 1)
+                		input_nodes.push_back(next[i]);
                 }
             }
         }
 
-        for (auto& n : sorted) {
-            nodes_.push_back(n);
+//        for (auto& n : sorted) {
+//            nodes_.push_back(n);
+//        }
+        for ( unsigned int n = 0; n < sorted.size(); n++){
+        	nodes_.push_back(sorted[n]);
         }
 
         input_layers_ = input;

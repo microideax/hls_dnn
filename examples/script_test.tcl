@@ -11,14 +11,14 @@ set_top recognize
 #set_top test_hls
 #set_top test_vec_t
 
-add_files stb_image/stb_image.h
-add_files stb_image/stb_image_resize.h
-add_files stb_image/stb_image_write.h
+add_files -tb stb_image/stb_image.h
+add_files -tb stb_image/stb_image_resize.h
+add_files -tb stb_image/stb_image_write.h
 
 add_files ../tiny_dnn/activations/activation_function.h
-add_files ../tiny_dnn/core/framework/device.fwd.h
-add_files ../tiny_dnn/core/framework/device.h
-add_files ../tiny_dnn/core/framework/op_kernel.h
+add_files -tb ../tiny_dnn/core/framework/device.fwd.h
+add_files -tb ../tiny_dnn/core/framework/device.h
+add_files -tb ../tiny_dnn/core/framework/op_kernel.h
 add_files ../tiny_dnn/core/framework/program.h
 add_files ../tiny_dnn/core/framework/program_manager.h
 add_files ../tiny_dnn/core/kernels/avx_conv2d_back_kernel.h
@@ -125,7 +125,7 @@ add_files ../tiny_dnn/hls_lib/static_vector.h
 add_files ../tiny_dnn/config.h
 add_files ../tiny_dnn/network.h
 add_files ../tiny_dnn/node.h
-add_files ../tiny_dnn/nodes.h
+add_files -tb ../tiny_dnn/nodes.h
 add_files ../tiny_dnn/tiny_dnn.h
 
 add_files lenet.cpp
