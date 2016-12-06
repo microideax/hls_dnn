@@ -236,7 +236,7 @@ class nodes {
     }
 
     /* Nodes which this class has ownership */
-    std::vector<std::shared_ptr<layer>> own_nodes_;
+    std::vector<std::shared_ptr<layer> > own_nodes_;
     /* List of all nodes which includes own_nodes */
     std::vector<layerptr_t> nodes_;
 };
@@ -253,7 +253,7 @@ class sequential : public nodes {
 
         nodes_.back()->set_out_grads({ reordered_grad[0] });
 
-        for (auto l = nodes_.rbegin(); l != nodes_.rend(); l++) {
+        for (std::vector<layerptr_t>::reverse_iterator l = nodes_.rbegin(); l != nodes_.rend(); l++) {
             (*l)->backward();
         }
     }
@@ -265,11 +265,12 @@ class sequential : public nodes {
 
         nodes_.front()->set_in_data({ reordered_data[0] });
 
-        for (auto l : nodes_) {
-            if (l->initialized()) {
-                l->forward();
+//        for (auto l : nodes_) {
+        for ( unsigned int l = 0; l < nodes_.size(); l++){
+            if (nodes_[l]->initialized()) {
+                nodes_[l]->forward();
             } else {
-                throw nn_error("Layer " + l->layer_type() + " not initialized.");
+                throw nn_error("Layer " + nodes_[l]->layer_type() + " not initialized.");
             }
         }
 
@@ -283,19 +284,19 @@ class sequential : public nodes {
         push_back(std::forward<T>(layer));
 
         if (nodes_.size() != 1) {
-            auto head = nodes_[nodes_.size()-2];
-            auto tail = nodes_[nodes_.size()-1];
+            layerptr_t head = nodes_[nodes_.size()-2];
+            layerptr_t tail = nodes_[nodes_.size()-1];
             connect(head, tail, 0, 0);
-            auto out = head->outputs();
-            auto in = tail->inputs();
+            std::vector<edgeptr_t> out = head->outputs();
+            std::vector<edgeptr_t> in = tail->inputs();
         }
         check_connectivity();
     }
 
     void check_connectivity() {
         for (cnn_size_t i = 0; i < nodes_.size() - 1; i++) {
-            auto out = nodes_[i]->outputs();
-            auto in = nodes_[i+1]->inputs();
+        	std::vector<edgeptr_t> out = nodes_[i]->outputs();
+        	std::vector<edgeptr_t> in = nodes_[i+1]->inputs();
 
             if (out[0] != in[0]) {
                 throw nn_error("");

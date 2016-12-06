@@ -33,21 +33,25 @@ namespace tiny_dnn {
 
 // x = x / denom
 inline void vector_div(vec_t& x, float_t denom) {
-    std::transform(x.begin(), x.end(), x.begin(), [=](float_t x) { return x / denom; });
+//    std::transform(x.begin(), x.end(), x.begin(), [=](float_t x) { return x / denom; });
+    for (unsigned int i = 0; i < x.size(); i++){
+    	x[i] = float_t(x[i]) / denom;
+    }
 }
 
 /** 
  * calculate mean/variance across channels
  */
 inline void moments(const tensor_t& in, cnn_size_t spatial_dim, cnn_size_t channels, vec_t *mean, vec_t *variance) {
-    cnn_size_t num_examples = in.size();
+    vec_t* null_ptr=NULL;
+	cnn_size_t num_examples = in.size();
 
     assert(in[0].size() == spatial_dim * channels);
 
     mean->resize(channels);
     std::fill(mean->begin(), mean->end(), (float_t)0.0);
 
-    if (variance != nullptr) {
+    if (variance != null_ptr) {
         variance->resize(channels);
         std::fill(variance->begin(), variance->end(), (float_t)0.0);
     }
@@ -67,7 +71,7 @@ inline void moments(const tensor_t& in, cnn_size_t spatial_dim, cnn_size_t chann
     vector_div(*mean, (float_t)num_examples*spatial_dim);
 
     // calculate variance
-    if (variance != nullptr) {
+    if (variance != null_ptr) {
         for (cnn_size_t i = 0; i < num_examples; i++) {
             for (cnn_size_t j = 0; j < channels; j++) {
                 float_t* pvar = &variance->at(j);
