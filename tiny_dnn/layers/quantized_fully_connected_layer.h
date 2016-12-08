@@ -69,7 +69,7 @@ public:
         return params_.out_size_;
     }
 
-    std::vector<index3d<cnn_size_t>> in_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > in_shape() const {//Yao: deleted override
         if (params_.has_bias_) {
             return { index3d<cnn_size_t>(params_.in_size_, 1, 1),
                      index3d<cnn_size_t>(params_.in_size_,
@@ -82,7 +82,7 @@ public:
         }
     }
 
-    std::vector<index3d<cnn_size_t>> out_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > out_shape() const {//Yao: deleted override
         return { index3d<cnn_size_t>(params_.out_size_, 1, 1),
                  index3d<cnn_size_t>(params_.out_size_, 1, 1) };
     }
