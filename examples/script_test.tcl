@@ -125,7 +125,7 @@ add_files ../tiny_dnn/hls_lib/static_vector.h
 add_files ../tiny_dnn/config.h
 add_files ../tiny_dnn/network.h
 add_files ../tiny_dnn/node.h
-add_files -tb ../tiny_dnn/nodes.h
+add_files ../tiny_dnn/nodes.h
 add_files ../tiny_dnn/tiny_dnn.h
 
 add_files lenet.cpp

@@ -47,7 +47,10 @@ public:
     }
 
     std::vector<shape3d> out_shape() const {//Yao: deleted override
-        return{ shape3d(dim_,1,1) };
+        std::vector<shape3d> temp;
+        temp.push_back(shape3d(dim_ ,1,1));
+//    	return{ shape3d(dim_,1,1) };
+        return temp;
     }
 
     void forward_propagation(const std::vector<tensor_t*>& in_data,
@@ -60,11 +63,14 @@ public:
         // @todo parallelize
         for (cnn_size_t sample = 0, sample_count = in1.size(); sample < sample_count; ++sample) {
             for (cnn_size_t i = 1; i < num_args_; i++) {
-                std::transform((*in_data[i])[sample].begin(),
-                               (*in_data[i])[sample].end(),
-                               out[sample].begin(),
-                               out[sample].begin(),
-                               [](float_t x, float_t y){ return x + y; });
+//                std::transform((*in_data[i])[sample].begin(),
+//                               (*in_data[i])[sample].end(),
+//                               out[sample].begin(),
+//                               out[sample].begin(),
+//                               [](float_t x, float_t y){ return x + y; });
+                for (cnn_size_t j = 0; j < in_data[i]->size(); j++){
+                	out[sample][j] = ( (*in_data[i])[sample][j] + out[sample][j] );
+                }
             }
         }
     }

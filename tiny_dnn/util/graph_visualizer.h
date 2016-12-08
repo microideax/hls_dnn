@@ -84,14 +84,15 @@ private:
     }
 
     void generate_edge(std::ostream& stream, const edge& e, node2name_t& node2name) {
-        auto next = e.next();
-        auto prev = e.prev();
+    	std::vector<node*> next = e.next();
+        const node* prev = e.prev();
 
-        for (auto n : next) {
-            cnn_size_t dst_port = n->prev_port(e);
+//        for (auto n : next) {
+        for (unsigned int n = 0; n < next.size(); n++){
+            cnn_size_t dst_port = next[n]->prev_port(e);
             cnn_size_t src_port = prev->next_port(e);
             stream << "  " << node2name[prev] << ":out" << src_port <<
-                    " -> " << node2name[n] << ":in" << dst_port << ";" << std::endl;
+                    " -> " << node2name[next[n]] << ":in" << dst_port << ";" << std::endl;
         }
     }
 

@@ -74,9 +74,12 @@ void tiny_average_pooling_kernel(bool parallelize,
         }
 
         assert(out.size() == out2wi.size());
-        for_i(parallelize, out2wi.size(), [&](int i) {
-            out[i] = h.f(a, i);
-        });
+//        for_i(parallelize, out2wi.size(), [&](int i) {
+//            out[i] = h.f(a, i);
+//        });
+        for (unsigned int i = 0; i < out2wi.size(); i++){
+        		out[i] = h.f(a, i);
+        }
     }
 }
 
@@ -90,7 +93,7 @@ void tiny_average_pooling_back_kernel(const std::vector<tensor_t*>&   in_data,
                                       float_t                         scale_factor,
                                       std::vector<typename partial_connected_layer<Activation>::io_connections>& weight2io,
                                       std::vector<typename partial_connected_layer<Activation>::wo_connections>& in2wo,
-                                      std::vector<std::vector<cnn_size_t>>& bias2out) {
+                                      std::vector<std::vector<cnn_size_t> >& bias2out) {
 
     for (size_t sample = 0; sample < in_data[0]->size(); sample++) {
         const vec_t& prev_out   = (*in_data[0])[sample];
@@ -110,7 +113,7 @@ void tiny_average_pooling_back_kernel(const std::vector<tensor_t*>&   in_data,
         }
 
         for (size_t i = 0; i < weight2io.size(); ++i) {
-            const std::vector<std::pair<cnn_size_t, cnn_size_t>>& connections = weight2io[i];
+            const std::vector<std::pair<cnn_size_t, cnn_size_t> >& connections = weight2io[i];
             float_t diff = float_t(0);
 
             // for (auto connection : connections)
@@ -198,11 +201,16 @@ class average_pooling_layer : public partial_connected_layer<Activation> {
         init_connection(pooling_size);
     }
 
-    std::vector<index3d<cnn_size_t>> in_shape() const {//Yao: deleted override
-        return { in_, w_, index3d<cnn_size_t>(1, 1, out_.depth_) };
+    std::vector<index3d<cnn_size_t> > in_shape() const {//Yao: deleted override
+    	std::vector<index3d<cnn_size_t> > temp;
+    	temp.push_back(in_);
+    	temp.push_back(w_);
+    	temp.push_back(index3d<cnn_size_t>(1, 1, out_.depth_));
+//        temp = { in_, w_, index3d<cnn_size_t>(1, 1, out_.depth_) };
+        return temp;
     }
 
-    std::vector<index3d<cnn_size_t>> out_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > out_shape() const {//Yao: deleted override
         return { out_, out_ };
     }
 

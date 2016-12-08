@@ -249,7 +249,7 @@ public:
         Base::backend_->deconv2d(in_data, out_data, out_grad, in_grad);
     }
 
-    std::vector<index3d<cnn_size_t>> in_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > in_shape() const {//Yao: deleted override
         if (params_.has_bias) {
             return { params_.in, params_.weight,
                      index3d<cnn_size_t>(1, 1, params_.out.depth_) };
@@ -258,7 +258,7 @@ public:
         }
     }
 
-    std::vector<index3d<cnn_size_t>> out_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > out_shape() const {//Yao: deleted override
         return {params_.out_unpadded, params_.out_unpadded};
     }
 

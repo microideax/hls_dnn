@@ -30,7 +30,7 @@
 
 namespace tiny_dnn {
 
-    enum class slice_type {
+enum slice_type {
         slice_samples,
         slice_channels
     };
@@ -83,7 +83,9 @@ public:
     }
 
     std::vector<shape3d> in_shape() const {//Yao: deleted override
-        return {in_shape_};
+        std::vector<shape3d> tempvec;
+        tempvec.push_back(in_shape_);
+    	return tempvec;
     }
 
     std::vector<shape3d> out_shape() const {//Yao: deleted override
@@ -93,10 +95,10 @@ public:
     void forward_propagation(const std::vector<tensor_t*>& in_data,
                              std::vector<tensor_t*>& out_data)  {//Yao: deleted override
         switch (slice_type_) {
-        case slice_type::slice_samples:
+        case slice_samples:
             slice_data_forward(*in_data[0], out_data);
             break;
-        case slice_type::slice_channels:
+        case slice_channels:
             slice_channels_forward(*in_data[0], out_data);
             break;
         default:
@@ -112,10 +114,10 @@ public:
         CNN_UNREFERENCED_PARAMETER(out_data);
 
         switch (slice_type_) {
-        case slice_type::slice_samples:
+        case slice_samples:
             slice_data_backward(out_grad, *in_grad[0]);
             break;
-        case slice_type::slice_channels:
+        case slice_channels:
             slice_channels_backward(out_grad, *in_grad[0]);
             break;
         default:
@@ -185,7 +187,7 @@ private:
     }
 
     void set_sample_count(cnn_size_t sample_count) {//Yao: deleted override
-        if (slice_type_ == slice_type::slice_samples) {
+        if (slice_type_ == slice_samples) {
             if (num_outputs_ == 0)
                 throw nn_error("num_outputs must be positive integer");
 
@@ -199,10 +201,10 @@ private:
 
     void set_shape() {
         switch (slice_type_) {
-        case slice_type::slice_samples:
+        case slice_samples:
             set_shape_data();
             break;
-        case slice_type::slice_channels:
+        case slice_channels:
             set_shape_channels();
             break;
         default:
