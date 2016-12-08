@@ -100,7 +100,7 @@ public:
 
         for_(parallelize_, 0, in2out_.size(), [&](const blocked_range& r) {
             for (int i = r.begin(); i < r.end(); i++) {
-                const auto& in_index = out2in_[i];
+                const cnn_size_t& in_index = out2in_[i];
                 a[i] = (max_idx[in_index] == i) ? in[in_index] : float_t(0);
             }
         });
@@ -142,8 +142,8 @@ public:
         }
     }*/
 
-    std::vector<index3d<cnn_size_t>> in_shape() const { return {in_}; }//Yao: deleted override
-    std::vector<index3d<cnn_size_t>> out_shape() const { return {out_, out_}; }//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > in_shape() const { return {in_}; }//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > out_shape() const { return {out_, out_}; }//Yao: deleted override
     std::string layer_type() const { return "max-unpool"; }//Yao: deleted override
     size_t unpool_size() const {return unpool_size_;}
 

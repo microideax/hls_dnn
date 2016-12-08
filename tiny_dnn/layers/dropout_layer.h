@@ -169,7 +169,7 @@ private:
     float_t dropout_rate_;
     float_t scale_;
     cnn_size_t in_size_;
-	std::vector<std::vector<uint8_t>> mask_;
+	std::vector<std::vector<uint8_t> > mask_;
 };
 
 } // namespace tiny_dnn

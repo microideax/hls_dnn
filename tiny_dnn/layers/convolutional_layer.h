@@ -269,7 +269,7 @@ class convolutional_layer : public feedforward_layer<Activation> {
         kernel_back_->compute(ctx);
     }
 
-    std::vector<index3d<cnn_size_t>> in_shape() const {//Yao: deleted override
+    std::vector<index3d<cnn_size_t> > in_shape() const {//Yao: deleted override
         if (params_.has_bias) {
             return { params_.in, params_.weight,
                 index3d<cnn_size_t>(1, 1, params_.out.depth_) };
@@ -279,7 +279,7 @@ class convolutional_layer : public feedforward_layer<Activation> {
         }
     }
 
-    std::vector<index3d<cnn_size_t>>
+    std::vector<index3d<cnn_size_t> >
     out_shape() const { return { params_.out, params_.out }; }//Yao: deleted override
 
     std::string layer_type() const {//Yao: deleted override

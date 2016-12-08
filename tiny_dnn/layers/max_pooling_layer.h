@@ -143,10 +143,10 @@ class max_pooling_layer : public feedforward_layer<Activation> {
         Base::backend_->maxpool(in_data, out_data, out_grad, in_grad);
     }
 
-    std::vector<index3d<cnn_size_t>>
+    std::vector<index3d<cnn_size_t> >
     in_shape() const { return { params_.in_ }; }//Yao: deleted override
 
-    std::vector<index3d<cnn_size_t>>
+    std::vector<index3d<cnn_size_t> >
     out_shape() const { return { params_.out_, params_.out_ }; }//Yao: deleted override
 
     std::string layer_type() const {//Yao: deleted override
@@ -179,7 +179,7 @@ private:
                                    cnn_size_t pooling_size,
                                    cnn_size_t stride) {
         float_t tmp = static_cast<float_t>(in_size - pooling_size) / stride;
-        return static_cast<cnn_size_t>(std::ceil(tmp) + float_t(1.0));
+        return static_cast<cnn_size_t>(ceil(tmp) + float_t(1.0));
     }
 
     void connect_kernel(cnn_size_t pooling_size,

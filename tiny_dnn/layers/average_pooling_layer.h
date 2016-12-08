@@ -259,7 +259,7 @@ class average_pooling_layer : public partial_connected_layer<Activation> {
     static cnn_size_t pool_out_dim(cnn_size_t in_size,
                                    cnn_size_t pooling_size,
                                    cnn_size_t stride) {
-        return static_cast<int>(std::ceil((
+        return static_cast<int>(ceil((
             static_cast<float_t>(in_size) - pooling_size) / stride) + 1);
     }
 
